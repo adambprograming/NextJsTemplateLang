@@ -10,6 +10,7 @@ import Link from "next/link";
 // Components
 import { Menu, MenuItem } from "@/components/menu/menu.component.jsx";
 import ColorThemeSwitch from "@/components/color-theme-switch/color-theme-switch.component";
+import MenuLanguage from "@/components/menu-language/menu-language.component";
 
 /*
 INSTRUCTIONS
@@ -39,6 +40,7 @@ const Header = ({ variant = "leftsettings-centerlogo-rightmenu" }) => {
     return (
       <div className="header-settings">
         <ColorThemeSwitch variant="third" />
+        <MenuLanguage languages={["cs", "en"]} variant="second" iconOnly />
       </div>
     );
   };

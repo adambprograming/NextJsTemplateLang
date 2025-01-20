@@ -23,8 +23,6 @@ const Btn = dynamic(() => import("@/components/btn/btn.component"), {
   ssr: false,
 });
 
-
-
 import {
   Form,
   FormRow,
@@ -177,7 +175,7 @@ const Page = () => {
                 <IconLocation />
               </div>
               <div className={`${styles.specContainer}`}>
-                <title className={`${styles.contactTitle}`}>Město</title>
+                <span className={`${styles.contactTitle}`}>Město</span>
                 <span className={`${styles.contactValue}`}>Pardubice (CZ)</span>
               </div>
             </Link>

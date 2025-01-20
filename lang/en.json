@@ -1,0 +1,42 @@
+{
+    "homePage": {
+      "heroSection": {
+        "title": ["I will create a ", "successful", " website for you"],
+        "text": "My name is Adam Bartůšek, and I specialize in developing websites and e-shops. I build every project from scratch and program everything myself. Feel free to contact me, and together we will find the best solution tailored to you.",
+        "btn": [
+          {
+            "aria": "Navigate to contact section",
+            "content": "Contact"
+          }
+        ],
+        "img": [
+          {
+            "aria": "Image of this section"
+          }
+        ]
+      },
+      "servicesSection": {
+        "title": ["I CAN CODE EVERYTHING ", "exceptional", " websites"],
+        "subtitle": "MY SERVICES",
+        "text": "I provide comprehensive services in web development, from modern websites and e-shops to powerful web applications that meet your unique needs.",
+        "list": ["• Websites", "• E-shops", "• Web applications"],
+        "btn": [
+          {
+            "aria": "Navigate to services section",
+            "content": "Learn more"
+          }
+        ],
+        "img": [
+          {
+            "aria": "Image of this section"
+          }
+        ]
+      },
+      "portfolioSection": {
+        "title": ["Take a look at ", "my", " projects"],
+        "subtitle": "PORTFOLIO",
+        "text": "Below are the projects I have created for inspiration."
+      }
+    }
+  }
+  
