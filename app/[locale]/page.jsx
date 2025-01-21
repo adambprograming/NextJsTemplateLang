@@ -6,7 +6,6 @@ import HeroImg from "@/public/hero.png";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
 // Context
 
 // Componenets
@@ -50,12 +49,12 @@ export default function Home() {
           </div>
         </div>
         <div className={`${styles.imgContainer}`}>
-          <Image src={HeroImg} alt={lang('heroSection.img.0.aria')} priority={true} />
+          <Image src={HeroImg} alt={lang('heroSection.img.0.alt')} aria-label={lang('heroSection.img.0.alt')} priority={true} />
         </div>
       </section>
       <section className={`${styles.services}`}>
         <div className={`${styles.imgContainer}`}>
-          <Image src={HeroImg} alt={lang('servicesSection.img.0.aria')} />
+          <Image src={HeroImg} alt={lang('servicesSection.img.0.alt')} aria-label={lang('servicesSection.img.0.alt')} />
         </div>
         <div className={`${styles.contentContainer}`}>
           <div className={`${styles.titleContainer}`}>

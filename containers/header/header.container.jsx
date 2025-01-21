@@ -5,6 +5,7 @@ import "./header.styles.scss";
 import Logo from "@/components/svgs/logo.component.jsx";
 // React/Next Functions
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 // Context & Actions
 
 // Components
@@ -20,6 +21,7 @@ INSTRUCTIONS
               leftmenu-centerlogo-rightsettings
 */
 const Header = ({ variant = "leftsettings-centerlogo-rightmenu" }) => {
+  const lang = useTranslations("header")
   const renderMenu = (location) => {
     return (
       <Menu location={location} paddingOfEachLinkBlock="10px 20px">
@@ -28,10 +30,10 @@ const Header = ({ variant = "leftsettings-centerlogo-rightmenu" }) => {
           <MenuItem content="TEST" href="/test"></MenuItem>
           <MenuItem content="TEST" href="/test"></MenuItem>
         </MenuItem> */}
-        <MenuItem content="O mně" href="/o-mne" />
         {/* <MenuItem content="Portfolio" href="/portfolio" /> */}
-        <MenuItem content="Služby" href="/sluzby" />
-        <MenuItem content="Kontakt" href="/kontakt" />
+        <MenuItem content={lang('menu.0')} href="/o-mne" />
+        <MenuItem content={lang('menu.1')} href="/sluzby" />
+        <MenuItem content={lang('menu.2')} href="/kontakt" />
       </Menu>
     );
   };
@@ -47,8 +49,8 @@ const Header = ({ variant = "leftsettings-centerlogo-rightmenu" }) => {
 
   const renderLogo = () => {
     return (
-      <Link href="/">
-        <Logo alt="Logo" id="logo-header" aria-label="Go to home page" />
+      <Link href="/" aria-label={lang('link.0.aria')}>
+        <Logo alt={lang('img.0.alt')} id="logo-header" aria-label={lang('img.0.aria')} />
       </Link>
     );
   };

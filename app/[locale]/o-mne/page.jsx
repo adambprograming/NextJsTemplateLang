@@ -14,7 +14,7 @@ import IconPython from "@/public/techstack/python.svg";
 import IconFigma from "@/public/techstack/figma.svg";
 // React/Next Functions
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 // Context & Actions
 
 // Componenets
@@ -25,152 +25,177 @@ import {
 } from "@/components/showcase/showcase.component";
 
 const Page = () => {
+  const lang = useTranslations("aboutPage");
+  const showcaseLang = useTranslations("components.showcase");
   return (
     <main className={styles.main}>
       <section className={`${styles.introduction}`}>
         <div className={`${styles.imgContainer}`}>
-          <Image src={HeroImg} alt="portrait" priority />
+          <Image
+            src={HeroImg}
+            alt={lang("introductionSection.img.0.alt")}
+            aria-label={lang("introductionSection.img.0.aria")}
+            priority
+          />
         </div>
         <div className={`${styles.contentContainer}`}>
           <div className={`${styles.titleContainer}`}>
-            <span>O MNĚ</span>
+            <span>{lang("introductionSection.subtitle")}</span>
             <h1>
-              Zdravím,
+              {lang("introductionSection.title.0")}
               <br />
-              jmenuji se Adam <strong>Bartůšek</strong>
+              {lang("introductionSection.title.1")}
+              <strong>{lang("introductionSection.title.2")}</strong>
             </h1>
             <hr />
           </div>
           <div className={`${styles.textContainer}`}>
-            <p>
-              Jsem programátor specializující se na moderní webové technologie.
-              Nabízím komplexní služby v oblasti vývoje webových stránek,
-              e-shopů a webových aplikací. Moje práce klade důraz na rychlost,
-              funkčnost a uživatelskou přívětivost.
-            </p>
+            <p>{lang("introductionSection.text.0")}</p>
             <br />
-            <p>
-              Každý projekt tvořím na míru, s ohledem na vaše potřeby a cíle.
-              Mým cílem je nejen splnit vaše očekávání, ale také je překonat.
-              Společně vytvoříme řešení, které vás odliší a posune vaše
-              podnikání vpřed.
-            </p>
+            <p>{lang("introductionSection.text.1")}</p>
           </div>
         </div>
       </section>
       <section className={`${styles.showcase}`}>
         <Showcase>
           <ShowcaseItem>
-            <Image src={IconHtml} alt="" />
+            <Image
+              src={IconHtml}
+              alt={showcaseLang("img.0.alt")}
+              aria-label={showcaseLang("img.0.aria")}
+            />
           </ShowcaseItem>
           <ShowcaseItem>
-            <Image src={IconCss} alt="" />
+            <Image
+              src={IconCss}
+              alt={showcaseLang("img.1.alt")}
+              aria-label={showcaseLang("img.1.aria")}
+            />
           </ShowcaseItem>
           <ShowcaseItem>
-            <Image src={IconSass} alt="" />
+            <Image
+              src={IconSass}
+              alt={showcaseLang("img.2.alt")}
+              aria-label={showcaseLang("img.2.aria")}
+            />
           </ShowcaseItem>
           <ShowcaseItem>
-            <Image src={IconJs} alt="" />
+            <Image
+              src={IconJs}
+              alt={showcaseLang("img.3.alt")}
+              aria-label={showcaseLang("img.3.aria")}
+            />
           </ShowcaseItem>
           <ShowcaseItem>
-            <Image src={IconReact} alt="" />
+            <Image
+              src={IconReact}
+              alt={showcaseLang("img.4.alt")}
+              aria-label={showcaseLang("img.4.aria")}
+            />
           </ShowcaseItem>
           <ShowcaseItem>
-            <Image src={IconNextjs} alt="" />
+            <Image
+              src={IconNextjs}
+              alt={showcaseLang("img.5.alt")}
+              aria-label={showcaseLang("img.5.aria")}
+            />
           </ShowcaseItem>
           <ShowcaseItem>
-            <Image src={IconGit} alt="" />
+            <Image
+              src={IconGit}
+              alt={showcaseLang("img.6.alt")}
+              aria-label={showcaseLang("img.6.aria")}
+            />
           </ShowcaseItem>
           <ShowcaseItem>
-            <Image src={IconGithub} alt="" />
+            <Image
+              src={IconGithub}
+              alt={showcaseLang("img.7.alt")}
+              aria-label={showcaseLang("img.7.aria")}
+            />
           </ShowcaseItem>
           <ShowcaseItem>
-            <Image src={IconPython} alt="" />
+            <Image
+              src={IconPython}
+              alt={showcaseLang("img.8.alt")}
+              aria-label={showcaseLang("img.8.aria")}
+            />
           </ShowcaseItem>
           <ShowcaseItem>
-            <Image src={IconFigma} alt="" />
+            <Image
+              src={IconFigma}
+              alt={showcaseLang("img.9.alt")}
+              aria-label={showcaseLang("img.9.aria")}
+            />
           </ShowcaseItem>
         </Showcase>
       </section>
       <section className={`${styles.experience}`}>
         <div className={`${styles.contentContainer}`}>
           <div className={`${styles.titleContainer}`}>
-            <span>MOJE CESTA</span>
+            <span>{lang("experienceSection.subtitle")}</span>
             <h1>
-              Zkušenosti s <strong>webovými</strong> technologiemi
+              {lang("experienceSection.title.0")}
+              <strong>{lang("experienceSection.title.1")}</strong>
+              {lang("experienceSection.title.2")}
             </h1>
             <hr />
           </div>
         </div>
         <div className={`${styles.boxContainer}`}>
           <div className={`${styles.box}`}>
-            <h6>březen 2022</h6>
+            <h6>{lang("experienceSection.box.0.date")}</h6>
             <hr />
-            <p>
-              Započal jsem svoji cestu programování, která se stala základem mé
-              profesní dráhy v oblasti webového vývoje.
-            </p>
+            <p>{lang("experienceSection.box.0.text")}</p>
           </div>
           <div className={`${styles.box}`}>
-            <h6>leden 2024</h6>
+            <h6>{lang("experienceSection.box.1.date")}</h6>
             <hr />
-            <p>
-              Začal jsem pracovat ve firmě ComArr jako webový vývojář. Vyvíjím
-              zde webovou aplikaci pro tisíce uživatelů.
-            </p>
+            <p>{lang("experienceSection.box.1.text")}</p>
           </div>
           <div className={`${styles.box}`}>
-            <h6>květen 2024</h6>
+            <h6>{lang("experienceSection.box.2.date")}</h6>
             <hr />
-            <p>
-              Úspěšně jsem dokončil bakalářské studium v oboru informačního
-              managementu na Univerzitě Hradec Králové.
-            </p>
+            <p>{lang("experienceSection.box.2.text")}</p>
           </div>
         </div>
       </section>
       <section className={`${styles.specialization}`}>
         <div className={`${styles.contentContainer}`}>
           <div className={`${styles.titleContainer}`}>
-            <span>VIZE</span>
+            <span>{lang("specializationSection.subtitle")}</span>
             <h1>
-              Vyvíjím <strong>autentické</strong> weby
+              {lang("specializationSection.title.0")}
+              <strong>{lang("specializationSection.title.1")}</strong>
+              {lang("specializationSection.title.2")}
             </h1>
             <hr />
           </div>
           <div className={`${styles.textContainer}`}>
-            <p>
-              Specializuji se na Next.js, což mi umožňuje vytvářet výkonné,
-              škálovatelné a moderní webové aplikace. Nepoužívám předvytvořené
-              šablony ani knihovny – každý projekt je navržen a implementován od
-              základů tak, aby dokonale odpovídal vašim potřebám.
-            </p>
+            <p>{lang("specializationSection.text.0")}</p>
             <br />
-            <p>
-              Díky tomuto přístupu je váš web nejen unikátní, ale také
-              optimalizovaný pro výkon a přizpůsobený specifikám vašeho
-              podnikání.
-            </p>
+            <p>{lang("specializationSection.text.1")}</p>
           </div>
         </div>
         <div className={`${styles.imgContainer}`}>
-          <Image src={HeroImg} alt="portrait" />
+          <Image
+            src={HeroImg}
+            alt={lang("specializationSection.img.0.alt")}
+            aria-label={lang("specializationSection.img.0.aria")}
+          />
         </div>
       </section>
       <section className={`${styles.cta}`}>
         <div className={`${styles.titleContainer}`}>
-          <span>SPOLUPRÁCE</span>
+          <span>{lang('ctaSection.subtitle')}</span>
           <h1>
-            Připraven realizovat <strong>Váš</strong> projekt?
+            {lang('ctaSection.title.0')}<strong>{lang('ctaSection.title.1')}</strong>{lang('ctaSection.title.2')}
           </h1>
           <hr />
         </div>
         <div className={`${styles.textContainer}`}>
           <p>
-            Pokud hledáte webového vývojáře, který Vám vytvoří autentický,
-            moderní a výkonný web na míru, jste na správném místě. Společně
-            vytvoříme řešení, které bude nejen funkční, ale také vynikat v
-            konkurenci.
+            {lang('ctaSection.text')}
           </p>
         </div>
         <Btn
@@ -179,8 +204,9 @@ const Page = () => {
           textColor="var(--color-text-reverse)"
           borderSize="none"
           hoverEffect="scaleForward"
+          ariaLabel={lang('ctaSection.btn.0.aria')}
         >
-          Kontaktujte mě
+          {lang('ctaSection.btn.0.content')}
         </Btn>
       </section>
     </main>
