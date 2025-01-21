@@ -220,10 +220,7 @@
         },
         {
           "label": "Can you specifically define your request?",
-          "option": [
-            "No",
-            "Yes"
-          ]
+          "option": ["No", "Yes"]
         },
         {
           "label": "Scope of the project:",
@@ -459,7 +456,11 @@
                 "list": [
                   "Payment gateway",
                   "User interface",
-                  ["Custom solution for small", "businesses without unnecessary", "fees"]
+                  [
+                    "Custom solution for small",
+                    "businesses without unnecessary",
+                    "fees"
+                  ]
                 ]
               }
             },
@@ -704,6 +705,9 @@
         "The price cannot be precisely determined here; it primarily depends on the complexity and size of the web application, and it is usually calculated based on the hours spent on the project.",
         "If you already have a website, we can discuss better management terms or modernize it together."
       ]
+    },
+    "colorSwitch": {
+      "aria": "Button that switches the color mode of the website upon clicking."
     }
   }
 }
