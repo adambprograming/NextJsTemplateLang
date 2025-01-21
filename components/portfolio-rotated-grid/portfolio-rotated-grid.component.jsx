@@ -18,7 +18,7 @@ INSTRUCTIONS
 */
 
 const PortfolioRotatedGrid = () => {
-  const lang = useTranslations("portfolioRotatedGrid");
+  // const lang = useTranslations("portfolioRotatedGrid");
   const [widthOfWindow, setWidthOfWindow] = useState(1440);
   useEffect(() => {
     const getAndSetInnerWidthOfWindow = () => {

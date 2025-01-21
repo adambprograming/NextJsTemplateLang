@@ -93,7 +93,7 @@ export const Menu = ({
         setHeightOfLink(newHeight);
       }
     } catch (error) {
-      console.log(error);
+      
     }
   };
   // on initial load make listeners for resize that will call both func; updateWidthOfContainer & updateSizeOfLinks

@@ -8,10 +8,12 @@ import DarkThemeIcon from "../svgs/theme-icons/dark.component";
 
 // React Functions
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 // Context
 
 // Create btn that will change color theme of website
 const ColorThemeSwitch = ({ variant = "first" }) => {
+  const lang = useTranslations("colorSwitch");
   // Use local storage for theme persistence
   const [isDarkTheme, setIsDarkTheme] = useState(null);
   useEffect(() => {
@@ -61,7 +63,7 @@ const ColorThemeSwitch = ({ variant = "first" }) => {
           ? styles.thirdVariant
           : ""
       }`}
-      aria-label="Tlačítko po kliknutí změní barevný režim webové stránky."
+      aria-label={lang('aria')}
       onClick={toggleTheme}
     >
       {(variant === "second" || variant === "third") && (

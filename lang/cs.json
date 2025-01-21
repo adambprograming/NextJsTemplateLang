@@ -185,7 +185,7 @@
           "aria": "Navigovat na linkedin"
         }
       ],
-      "img":[
+      "img": [
         {
           "alt": "Obrázek",
           "aria": "Obrázek této sekce"
@@ -220,10 +220,7 @@
         },
         {
           "label": "Dokážete konkrétně specifikovat Vaši poptávku?",
-          "option": [
-            "Ne",
-            "Ano"
-          ]
+          "option": ["Ne", "Ano"]
         },
         {
           "label": "Rozsah zakázky:",
@@ -459,7 +456,11 @@
                 "list": [
                   "Platební brána",
                   "Uživatelské rozhraní",
-                  ["Vlastní řešení pro malé", "podnikatele bez zbytečných", "poplatků"]
+                  [
+                    "Vlastní řešení pro malé",
+                    "podnikatele bez zbytečných",
+                    "poplatků"
+                  ]
                 ]
               }
             },
@@ -704,6 +705,9 @@
         "Cena zde nejde přesně určit, odvíjí se primárně od složitosti a velikosti webové aplikace, standartně je počítána podle hodin strávených na projektu.",
         "V případě, že již máte webové stránky, můžeme společně domluvit lepší podmínky pro vedení stránek, nebo je zmodernizovat."
       ]
+    },
+    "colorSwitch": {
+      "aria": "Tlačítko po kliknutí změní barevný režim webové stránky."
     }
   }
 }
