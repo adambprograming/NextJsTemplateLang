@@ -6,6 +6,7 @@ import HeroImg from "@/public/hero.png";
 // React/Next Functions
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 // Context & Actions
 
 // Componenets
@@ -17,6 +18,7 @@ INSTRUCTIONS
 */
 
 const PortfolioRotatedGrid = () => {
+  const lang = useTranslations("portfolioRotatedGrid");
   const [widthOfWindow, setWidthOfWindow] = useState(1440);
   useEffect(() => {
     const getAndSetInnerWidthOfWindow = () => {
@@ -28,6 +30,7 @@ const PortfolioRotatedGrid = () => {
       window.removeEventListener("resize", getAndSetInnerWidthOfWindow);
     };
   }, []);
+  // TODO whole component
   return (
     <>
       {widthOfWindow < 760 ? (

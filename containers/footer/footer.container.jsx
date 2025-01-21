@@ -14,70 +14,19 @@ import IconGithub from "@/components/svgs/footer-icons/icon-github.component";
 // React/Next Functions
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
 // Context & Actions
 
 // Components
 import Popup from "../../components/popup/popup.component";
 
-const Footer = ({dynamicForSmallHeightPage = false}) => {
+const Footer = () => {
+  const lang = useTranslations("footer")
   const phoneNumber = "+42077780333073";
   const emailAddress = "ab@adam-bartusek.cz";
   const [popupPhone, setPopupPhone] = useState(false);
   const [popupEmail, setPopupEmail] = useState(false);
   const footerRef = useRef(null);
-
-  function listenForDomChanges(targetNode, callback) {
-    // Check browser compatibility
-    if (!window.MutationObserver) {
-      console.warn("MutationObserver is not supported by your browser.");
-      return;
-    }
-    // Create a MutationObserver instance
-    const observer = new MutationObserver(callback);
-    // Define the configuration object for the observer
-    const config = {
-      childList: true, // Observe changes in child nodes
-      subtree: true, // Observe changes in all descendant nodes
-      attributes: true, // Observe attribute changes
-    };
-    // Start observing the target node
-    observer.observe(targetNode, config);
-    // Function to disconnect the observer (optional)
-    return () => {
-      observer.disconnect();
-    };
-  }
-
-  useEffect(() => {
-    if (dynamicForSmallHeightPage) {      
-      window.addEventListener("resize", changeHeights);
-      const disconnectObserver = listenForDomChanges(document, changeHeights);
-      return () => {
-        disconnectObserver();
-        window.removeEventListener("resize", changeHeights);
-      };
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const changeHeights = () => {
-    try {
-      const heightWindow = window.innerHeight;
-      const heightContent = document.querySelector("body").scrollHeight;
-      const heightFooter = footerRef.current.scrollHeight;
-      const heightContentPlusFooter = heightContent + heightFooter;
-      const isFixed = footerRef.current.classList.contains("fixed-footer");
-      if (isFixed) {
-        if (heightWindow <= heightContentPlusFooter) {
-          footerRef.current.classList.remove("fixed-footer");
-        }
-      } else {
-        if (heightWindow >= heightContent) {
-          footerRef.current.classList.add("fixed-footer");
-        }
-      }
-    } catch (error) {}
-  };
 
   const copyToClipboard = (toClipboard, popup) => {
     navigator.clipboard.writeText(toClipboard);
@@ -129,24 +78,24 @@ const Footer = ({dynamicForSmallHeightPage = false}) => {
       <div className="footer-container">
         <div className="footer-container-info">
           <div className="footer-nav">
-            <span>Menu</span>
+            <span>{lang('nav.title')}</span>
             <ul>
               <li>
-                <Link href="/">Domovská stránka</Link>
+                <Link href="/" aria-label={lang('nav.list.0.aria')}>{lang('nav.list.0.content')}</Link>
               </li>
               <li>
-                <Link href="/o-mne">O mně</Link>
+                <Link href="/o-mne" aria-label={lang('nav.list.1.aria')}>{lang('nav.list.1.content')}</Link>
               </li>
               <li>
-                <Link href="/sluzby">Služby</Link>
+                <Link href="/sluzby" aria-label={lang('nav.list.2.aria')}>{lang('nav.list.2.content')}</Link>
               </li>
               <li>
-                <Link href="/kontakt">Kontakt</Link>
+                <Link href="/kontakt" aria-label={lang('nav.list.3.aria')}>{lang('nav.list.3.content')}</Link>
               </li>
             </ul>
           </div>
           <div className="footer-contacts">
-            <span>Kontakty</span>
+            <span>{lang('contacts.title')}</span>
             <div className="footer-icons">
               <span
                 className="footer-phone"
@@ -155,7 +104,7 @@ const Footer = ({dynamicForSmallHeightPage = false}) => {
                 }}
               >
                 <IconPhone />
-                <Popup state={popupPhone}>Zkopírováno!</Popup>
+                <Popup state={popupPhone}>{lang('contacts.popup')}</Popup>
               </span>
               <span
                 className="footer-email"
@@ -164,13 +113,13 @@ const Footer = ({dynamicForSmallHeightPage = false}) => {
                 }}
               >
                 <IconEmail />
-                <Popup state={popupEmail}>Zkopírováno!</Popup>
+                <Popup state={popupEmail}>{lang('contacts.popup')}</Popup>
               </span>
               <Link
                 href="https://www.google.com/maps/place/Pardubice/@50.0342266,15.4292331,10z/data=!3m1!4b1!4m6!3m5!1s0x470dc94b239307b5:0x12d59894ccf624ae!8m2!3d50.0343092!4d15.7811994!16zL20vMGNoNTQ?entry=ttu"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Odkaz k moji poloze."
+                aria-label={lang('contacts.link.0.aria')}
               >
                 <IconLocation />
               </Link>
@@ -178,7 +127,7 @@ const Footer = ({dynamicForSmallHeightPage = false}) => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Odkaz na můj Facebook profil."
+                aria-label={lang('contacts.link.1.aria')}
               >
                 <IconFacebook />
               </Link> */}
@@ -186,7 +135,7 @@ const Footer = ({dynamicForSmallHeightPage = false}) => {
                 href="https://www.instagram.com/_adaamb/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Odkaz na můj Instagram profil."
+                aria-label={lang('contacts.link.2.aria')}
               >
                 <IconInstagram />
               </Link>
@@ -194,7 +143,7 @@ const Footer = ({dynamicForSmallHeightPage = false}) => {
                 href="https://www.tiktok.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Odkaz na můj TikTok profil."
+                aria-label={lang('contacts.link.3.aria')}
               >
                 <IconTiktok />
               </Link> */}
@@ -202,7 +151,7 @@ const Footer = ({dynamicForSmallHeightPage = false}) => {
                 href={`https://www.linkedin.com/in/adam-bart%C5%AF%C5%A1ek-251107286/?locale=cs_CZ`}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Odkaz na můj Linkedin profil."
+                aria-label={lang('contacts.link.4.aria')}
               >
                 <IconLinkedin />
               </Link>
@@ -210,7 +159,7 @@ const Footer = ({dynamicForSmallHeightPage = false}) => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Odkaz na můj Twitter profil."
+                aria-label={lang('contacts.link.5.aria')}
               >
                 <IconX />
               </Link> */}
@@ -218,7 +167,7 @@ const Footer = ({dynamicForSmallHeightPage = false}) => {
                 href="https://github.com/adambprograming"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Odkaz na můj GitHub profil."
+                aria-label={lang('contacts.link.6.aria')}
               >
                 <IconGithub />
               </Link>
@@ -226,19 +175,19 @@ const Footer = ({dynamicForSmallHeightPage = false}) => {
           </div>
         </div>
         <div className="footer-container-copyright">
-          <p> Adam Bartůšek &copy; 2022-2024.</p>
+          <p>{lang('copyright.0')}&copy;{lang('copyright.1')}</p>
           <p>
-            <span>Vytvořil</span>
+            <span>{lang('createdBy.0')}</span>
             <Link
               href="https://www.adam-bartusek.cz/"
               target="_blank"
               rel="noopener"
-              aria-label="Created by Adam Bartůšek. Visit the developer website."
+              aria-label={lang('link.0.aria')}
             >
-              Adam Bartůšek
+              {lang('link.0.content')}
             </Link>
             <span>.</span>
-            <span>Všechna práva vyhrazena.</span>
+            <span>{lang('createdBy.1')}</span>
           </p>
         </div>
       </div>

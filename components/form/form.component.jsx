@@ -239,7 +239,8 @@ Final submit button
 */
 
 /*
-INSTRUCTIONS 
+INSTRUCTIONS
+  ariaLabel             (*)ariaLabel is for button element
   fontSize              (*)fontSize in px (* multiplier)
   fontFamily            (*)fontFamily (could be like var(--font-primary), if fonts are set in variables)
   borderRadius          (*)borderRadius (default set to 0px)
@@ -270,6 +271,7 @@ INSTRUCTIONS
 
 export const FormBtnSubmit = ({
   children = "Odeslat",
+  ariaLabel = "",
   fontSizeOfInputsAndBtnsForm,
   fontWeightOfInputsAndBtnsForm,
   textColorOfInputsAndBtnsForm,
@@ -313,6 +315,7 @@ export const FormBtnSubmit = ({
         width: `${width}`,
         "--localFilter": `${filter}`,
       }}
+      aria-label={`${ariaLabel}`}
     >
       <span
         className={`${styles.btnBg}`}
@@ -1252,12 +1255,14 @@ INSTRUCTIONS
   children                  text of btn
   selected                  true if its selected option
   functionOnClick           should be (option)=>{setOptionForm(option)}
+  value                     value that will be option
 */
 
 export const FormPickerOption = ({
   children = "Option 1",
   selected = false,
   functionOnClick,
+  value,
   fontSize,
   fontWeight,
   textColor,
@@ -1283,7 +1288,7 @@ export const FormPickerOption = ({
       }}
       onClick={(e) => {
         e.preventDefault();
-        functionOnClick(children);
+        functionOnClick(value);
       }}
     >
       {children}

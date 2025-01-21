@@ -14,6 +14,7 @@ import Icon4 from "@/components/svgs/number-icons/icon-4.component";
 // React/Next Functions
 import Image from "next/image";
 import dynamic from 'next/dynamic'
+import { useTranslations } from "next-intl";
 // Context & Actions
 
 // Componenets
@@ -23,6 +24,7 @@ import { FlipCard } from "@/components/card/card.component";
 import Btn from "@/components/btn/btn.component";
 
 const ServicesPage = () => {
+  const lang = useTranslations("servicesPage");
   return (
     <main className={styles.main}>
       <section className={`${styles.chooser}`}>
@@ -30,9 +32,9 @@ const ServicesPage = () => {
       </section>
       <section className={`${styles.process}`}>
         <div className={`${styles.titleContainer}`}>
-          <span>PRŮBĚH</span>
+          <span>{lang('processSection.subtitle')}</span>
           <h1>
-            Jak bude naše <strong>spolupráce</strong> probíhat?
+            {lang('processSection.title.0')}<strong>{lang('processSection.title.1')}</strong>{lang('processSection.title.2')}
           </h1>
           <hr />
         </div>
@@ -40,45 +42,40 @@ const ServicesPage = () => {
           <li>
             <Icon1 />
             <div>
-              <span>Společně najdeme směr</span>
+              <span>{lang('processSection.list.0.title')}</span>
               <hr />
               <p>
-                Na první schůzce společně zjistíme, co přesně potřebujete.
-                Nemusíte mít předem jasnou představu - společně najdeme to
-                nejlepší řešení.
+                {lang('processSection.list.0.text')}
               </p>
             </div>
           </li>
           <li>
             <Icon2 />
             <div>
-              <span>Postavím Vaše řešení</span>
+              <span>{lang('processSection.list.1.title')}</span>
               <hr />
               <p>
-                Navrhnu a vytvořím projekt, který bude rychlý, responzivní a
-                bude přesně odrážet Vaší značku.
+                {lang('processSection.list.1.text')}
               </p>
             </div>
           </li>
           <li>
             <Icon3 />
             <div>
-              <span>Doladíme vše k dokonalosti</span>
+              <span>{lang('processSection.list.2.title')}</span>
               <hr />
               <p>
-                Společně projdeme hotový projekt, získám od vás zpětnou vazbu a
-                doupravím vše podle vašich představ.
+                {lang('processSection.list.2.text')}
               </p>
             </div>
           </li>
           <li>
             <Icon4 />
             <div>
-              <span>Postarám se i po spuštění</span>
+              <span>{lang('processSection.list.3.title')}</span>
               <hr />
               <p>
-                Po spuštění webu se postarám o aktualizace, údržbu a dlouhodobou
-                podporu, abyste se mohli soustředit na své podnikání.
+                {lang('processSection.list.3.text')}
               </p>
             </div>
           </li>
@@ -86,9 +83,9 @@ const ServicesPage = () => {
       </section>
       <section className={`${styles.benefits}`}>
         <div className={`${styles.titleContainer}`}>
-          <span>STANDARDY</span>
+          <span>{lang('benefitsSection.subtitle')}</span>
           <h1>
-            Co <strong>splňuje</strong> každý můj projekt?
+            {lang('benefitsSection.title.0')}<strong>{lang('benefitsSection.title.1')}</strong>{lang('benefitsSection.title.2')}
           </h1>
           <hr />
         </div>
@@ -103,15 +100,14 @@ const ServicesPage = () => {
             bgHoverColor="rgb(from var(--color-primary) r g b / 1)"
             flippedContent={
               <p className={`${styles.flipedContent}`}>
-                Vaše webové stránky budou bleskově rychlé a snadno zvládnou
-                vysoký provoz.
+                {lang('benefitsSection.box.0.text')}
               </p>
             }
             hoverEffect="sticker"
           >
             <div className={`${styles.frontContent}`}>
-              <IconPerformance alt="x" />
-              <span className={`${styles.frontTitle}`}>Výkon</span>
+              <IconPerformance/>
+              <span className={`${styles.frontTitle}`}>{lang('benefitsSection.box.0.title')}</span>
             </div>
           </FlipCard>
           <FlipCard
@@ -124,14 +120,14 @@ const ServicesPage = () => {
             bgHoverColor="rgb(from var(--color-primary) r g b / 1)"
             flippedContent={
               <p className={`${styles.flipedContent}`}>
-                Moderní design, který se přizpůsobí každému zařízení.
+                {lang('benefitsSection.box.1.text')}
               </p>
             }
             hoverEffect="sticker"
           >
             <div className={`${styles.frontContent}`}>
-              <IconResponsiveness alt="x" />
-              <span className={`${styles.frontTitle}`}>Responsivita</span>
+              <IconResponsiveness/>
+              <span className={`${styles.frontTitle}`}>{lang('benefitsSection.box.1.title')}</span>
             </div>
           </FlipCard>
           <FlipCard
@@ -144,15 +140,14 @@ const ServicesPage = () => {
             bgHoverColor="rgb(from var(--color-primary) r g b / 1)"
             flippedContent={
               <p className={`${styles.flipedContent}`}>
-                Pomůžeme vám vyniknout ve vyhledávačích a přilákat více
-                zákazníků.
+                {lang('benefitsSection.box.2.text')}
               </p>
             }
             hoverEffect="sticker"
           >
             <div className={`${styles.frontContent}`}>
-              <IconSeo alt="x" />
-              <span className={`${styles.frontTitle}`}>SEO</span>
+              <IconSeo/>
+              <span className={`${styles.frontTitle}`}>{lang('benefitsSection.box.2.title')}</span>
             </div>
           </FlipCard>
           <FlipCard
@@ -165,39 +160,40 @@ const ServicesPage = () => {
             bgHoverColor="rgb(from var(--color-primary) r g b / 1)"
             flippedContent={
               <p className={`${styles.flipedContent}`}>
-                Weby vytvořené na míru Vašim potřebám a značce.
+                {lang('benefitsSection.box.3.text')}
               </p>
             }
             hoverEffect="sticker"
           >
             <div className={`${styles.frontContent}`}>
-              <IconAuthenticity alt="x" />
-              <span className={`${styles.frontTitle}`}>Autentičnost</span>
+              <IconAuthenticity/>
+              <span className={`${styles.frontTitle}`}>{lang('benefitsSection.box.3.title')}</span>
             </div>
           </FlipCard>
         </div>
       </section>
       <section className={`${styles.checkAlso}`}>
         <div className={`${styles.titleContainer}`}>
-          <span>JINÉ SLUŽBY</span>
+          <span>{lang('checkAlsoSection.subtitle')}</span>
           <h1>
-            Potřebujete <strong>zazářit</strong> v social media světě?
+            {lang('checkAlsoSection.title.0')}<strong>{lang('checkAlsoSection.title.1')}</strong>{lang('checkAlsoSection.title.2')}
           </h1>
           <hr />
         </div>
         <div className={`${styles.textContainer}`}>
           <p>
-            
+            {lang('checkAlsoSection.text')}
           </p>
         </div>
         <Btn
-          href="/kontakt"
+          href="/kontakt" // TODO ODKAZ NA WEB
           bgColor="var(--color-primary)"
           textColor="var(--color-text-reverse)"
           borderSize="none"
           hoverEffect="scaleForward"
+          ariaLabel={lang('checkAlsoSection.btn.0.aria')}
         >
-          Zjistit více
+          {lang('checkAlsoSection.btn.0.content')}
         </Btn>
       </section>
     </main>
