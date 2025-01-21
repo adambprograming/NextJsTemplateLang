@@ -1,0 +1,41 @@
+{
+  "homePage": {
+    "heroSection": {
+      "title": ["Vytvořím Vám ", "úspěšný", " web"],
+      "text": "Jmenuji se Adam Bartůšek a specializuji se na vývoj webových stránek a e-shopů. Každý projekt tvořím od základu a vše sám programuji. Neváhejte mě kontaktovat a společně najdeme to nejlepší řešení přesně pro Vás.",
+      "btn": [
+        {
+          "aria": "Navigovat do sekce kontakt",
+          "content": "Kontakt"
+        }
+      ],
+      "img": [
+        {
+            "aria": "Obrázek této sekce"
+        }
+      ]
+    },
+    "servicesSection": {
+      "title": ["IDK DOKAZU NAKODIT VSE ", "výjimečné", " weby"],
+      "subtitle": "MOJE SLUŽBY",
+      "text": "Poskytuji komplexní služby v oblasti webového vývoje, od moderních webových stránek a e-shopů až po výkonné webové aplikace, které odpovídají vašim jedinečným potřebám.",
+      "list": ["• Webové stránky", "• E-shopy", "• Webové aplikace"],
+      "btn": [
+        {
+          "aria": "Navigovat do sekce služby",
+          "content": "Zjistit více"
+        }
+      ],
+      "img": [
+        {
+            "aria": "Obrázek této sekce"
+        }
+      ]
+    },
+    "portfolioSection": {
+      "title": ["Podívejte se na ", "moje", " projekty"],
+      "subtitle": "PORTFOLIO",
+      "text": "Níže jsou projekty, které jsem vytvořil pro inspiraci."
+    }
+  }
+}

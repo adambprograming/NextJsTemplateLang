@@ -5,33 +5,36 @@ import HeroImg from "@/public/hero.png";
 // React/Next Functions
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 // Context
 
 // Componenets
-const LazyPortfolioRotatedGrid = dynamic(() => import("@/components/portfolio-rotated-grid/portfolio-rotated-grid.component"), {ssr: false})
-
+const LazyPortfolioRotatedGrid = dynamic(
+  () =>
+    import(
+      "@/components/portfolio-rotated-grid/portfolio-rotated-grid.component"
+    ),
+  { ssr: false }
+);
 import Btn from "@/components/btn/btn.component";
-// import PortfolioRotatedGrid from "@/components/portfolio-rotated-grid/portfolio-rotated-grid.component";
 
 export default function Home() {
+  const lang = useTranslations("homePage");
   return (
     <main className={`${styles.main}`}>
       <section className={`${styles.hero}`}>
         <div className={`${styles.contentContainer}`}>
           <div className={`${styles.titleContainer}`}>
-            {/* <span>O MNĚ</span> */}
             <h1>
-              Vytvořím Vám <strong>úspěšný</strong> web
+              {lang("heroSection.title.0")}
+              <strong>{lang("heroSection.title.1")}</strong>
+              {lang("heroSection.title.2")}
             </h1>
             <hr />
           </div>
           <div className={`${styles.textContainer}`}>
-            <p>
-              Jmenuji se Adam Bartůšek a specializuji se na vývoj webových
-              stránek a e-shopů. Každý projekt tvořím od základu a vše sám
-              programuji. Neváhejte mě kontaktovat a společně najdeme to
-              nejlepší řešení přesně pro Vás.
-            </p>
+            <p>{lang("heroSection.text")}</p>
           </div>
           <div className={`${styles.btnsContainer}`}>
             <Btn
@@ -40,48 +43,36 @@ export default function Home() {
               textColor="var(--color-text-reverse)"
               borderSize="none"
               hoverEffect="scaleForward"
+              ariaLabel={lang('heroSection.btn.0.aria')}
             >
-              Kontakt
+              {lang("heroSection.btn.0.content")}
             </Btn>
-            {/* <Btn
-              borderSize="none"
-              borderRadius="20px"
-              bgColor="var(--color-background)"
-              filter="drop-shadow(0 0 5px var(--black-50))"
-              bgHoverColor="var(--color-ascent)"
-              textHoverColor="var(--color-text-reverse)"
-              hoverEffect="cfLeft"
-            >
-              Nabídka
-            </Btn> */}
           </div>
         </div>
         <div className={`${styles.imgContainer}`}>
-          <Image src={HeroImg} alt="Hero section image" priority={true} />
+          <Image src={HeroImg} alt={lang('heroSection.img.0.aria')} priority={true} />
         </div>
       </section>
       <section className={`${styles.services}`}>
         <div className={`${styles.imgContainer}`}>
-          <Image src={HeroImg} alt="Hero section image" />
+          <Image src={HeroImg} alt={lang('servicesSection.img.0.aria')} />
         </div>
         <div className={`${styles.contentContainer}`}>
           <div className={`${styles.titleContainer}`}>
-            <span>MOJE SLUŽBY</span>
+            <span>{lang("servicesSection.subtitle")}</span>
             <h1>
-              IDK DOKAZU NAKODIT VSE <strong>výjimečné</strong> weby
+              {lang("servicesSection.title.0")}
+              <strong>{lang("servicesSection.title.1")}</strong>
+              {lang("servicesSection.title.2")}
             </h1>
             <hr />
           </div>
           <div className={`${styles.textContainer}`}>
-            <p>
-              Poskytuji komplexní služby v oblasti webového vývoje, od moderních
-              webových stránek a e-shopů až po výkonné webové aplikace, které
-              odpovídají vašim jedinečným potřebám.
-            </p>
+            <p>{lang("servicesSection.text")}</p>
             <ul className={`${styles.servicesList}`}>
-              <li>• Webové stránky</li>
-              <li>• E-shopy</li>
-              <li>• Webové aplikace</li>
+              <li>{lang("servicesSection.list.0")}</li>
+              <li>{lang("servicesSection.list.1")}</li>
+              <li>{lang("servicesSection.list.2")}</li>
             </ul>
           </div>
           <Btn
@@ -90,30 +81,31 @@ export default function Home() {
             textColor="var(--color-text-reverse)"
             borderSize="none"
             hoverEffect="scaleForward"
+            ariaLabel={lang('servicesSection.btn.0.aria')}
           >
-            Zjistit více
+            {lang("servicesSection.btn.0.content")}
           </Btn>
         </div>
       </section>
       <section className={`${styles.portfolio}`}>
         <div className={`${styles.contentContainer}`}>
-        <div className={`${styles.titleContainer}`}>
-            <span>PORTFOLIO</span>
+          <div className={`${styles.titleContainer}`}>
+            <span>{lang("portfolioSection.subtitle")}</span>
             <h1>
-              Podívejte se na <strong>moje</strong> projekty
+              {lang("portfolioSection.title.0")}
+              <strong>{lang("portfolioSection.title.1")}</strong>
+              {lang("portfolioSection.title.2")}
             </h1>
             <hr />
           </div>
           <div className={`${styles.textContainer}`}>
-            <p>
-              Níže jsou projekty, které jsem vytvořil pro inspiraci.
-            </p>
+            <p>{lang("portfolioSection.text")}</p>
           </div>
         </div>
         <LazyPortfolioRotatedGrid />
       </section>
       <section className={`${styles.testimonials}`}>
-          {/* TODO TESTIMONIALS */}
+        {/* TODO TESTIMONIALS */}
       </section>
     </main>
   );
