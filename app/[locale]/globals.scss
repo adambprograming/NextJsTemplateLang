@@ -122,9 +122,10 @@ body{
     --breakpoint-300: 320px; // Smallest phone width
     --padding-page: 7.5rem var(--padding-page-sides);
     --padding-header: 2.5rem var(--padding-page-sides) 0 var(--padding-page-sides);
-    --padding-page-sides: clamp(1rem, 5%, 4rem);
+    --padding-page-sides: clamp(1rem, 5vw, 8rem);
     // INDIVIDUAL FOR PROJECT
     --border-radius-btn: 15px;
+    --gap-section: 6rem;
 }
 
 .dark-theme {
@@ -149,6 +150,7 @@ body{
 }
 
 html {
+    scroll-behavior: smooth;
     font-size: 62.5%;
 }
 
@@ -174,7 +176,11 @@ main {
     max-width: 1440px;
     display: flex;
     flex-direction: column;
-    gap: 12rem;
+    gap: var(--gap-section);
+}
+
+section {
+    gap: var(--gap-section);
 }
 
 

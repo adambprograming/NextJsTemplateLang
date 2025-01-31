@@ -1,8 +1,8 @@
 {
   "homePage": {
     "heroSection": {
-      "title": ["I will create a ", "successful", " website for you"],
-      "text": "My name is Adam Bartůšek, and I specialize in developing websites and e-shops. I build every project from scratch and program everything myself. Feel free to contact me, and together we will find the best solution tailored to you.",
+      "title": ["I'll create a ", "successful", " website for you"],
+      "text": "I am Adam Bartůšek and I specialize in developing websites and e-shops. I develop each project from scratch and code everything myself. Do not hesitate to contact me and together we will find the best solution for you.",
       "btn": [
         {
           "aria": "Navigate to contact section",
@@ -17,9 +17,9 @@
       ]
     },
     "servicesSection": {
-      "title": ["I CAN CODE EVERYTHING ", "exceptional", " websites"],
+      "title": ["I provide ", "comprehensive", " tailored services"],
       "subtitle": "MY SERVICES",
-      "text": "I provide comprehensive services in web development, from modern websites and e-shops to powerful web applications that meet your unique needs.",
+      "text": "I provide web development services, from modern websites and e-commerce sites to powerful web applications that meet your unique needs.",
       "list": ["• Websites", "• E-shops", "• Web applications"],
       "btn": [
         {
@@ -256,7 +256,8 @@
           "aria": "Submit the form",
           "content": "Submit"
         }
-      ]
+      ],
+      "error": ["Required fields must be filled.", "Failed to send data."]
     }
   },
   "header": {
@@ -704,10 +705,58 @@
         "If you already have a website, we can discuss better management terms or modernize it together.",
         "The price cannot be precisely determined here; it primarily depends on the complexity and size of the web application, and it is usually calculated based on the hours spent on the project.",
         "If you already have a website, we can discuss better management terms or modernize it together."
-      ]
+      ],
+      "fillFormData": {
+        "web1": {
+          "scope": "1 page, simple, fast, optimized",
+          "functions": "Responsive, custom domain, hosting",
+          "price": "~ 10,000 CZK"
+        },
+        "web2": {
+          "scope": "1-5 pages, complex, fast, optimized",
+          "functions": "Responsive, custom domain, hosting, day and night mode",
+          "price": "~ 25,000 CZK"
+        },
+        "web3": {
+          "scope": "5+ pages, professional, fast, optimized",
+          "functions": "Responsive, custom domain, hosting, day and night mode, multilingual, content management system",
+          "price": "~ 45,000 CZK"
+        },
+        "eshop1": {
+          "scope": "5+ pages, professional, fast, optimized",
+          "functions": "Responsive, custom domain, hosting, day and night mode, multilingual, content management system, order management",
+          "price": "~ 75,000 CZK"
+        },
+        "eshop2": {
+          "scope": "5+ pages, professional, fast, optimized, payment gateway",
+          "functions": "Responsive, custom domain, hosting, day and night mode, multilingual, content management system, order management",
+          "price": "~ 100,000 CZK"
+        },
+        "eshop3": {
+          "scope": "5+ pages, professional, fast, optimized, payment gateway, product database, user interface",
+          "functions": "Responsive, custom domain, hosting, day and night mode, multilingual, content management system, order management",
+          "price": "~ 150,000 CZK"
+        },
+        "webapp": {
+          "scope": "Web application with the following structure:",
+          "functions": "I need the following functions:"
+        }
+      }
     },
     "colorSwitch": {
       "aria": "Button that switches the color mode of the website upon clicking."
+    },
+    "loader": {
+      "btn": [
+        {
+          "aria": "Button that close message.",
+          "content": "Close"
+        }
+      ],
+      "defaultMessage": {
+        "success": "Successfully sent!",
+        "error": "Something went wrong. Please try again!"
+      }
     }
   }
 }
