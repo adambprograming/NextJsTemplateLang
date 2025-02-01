@@ -103,9 +103,9 @@ export default function Home() {
         </div>
         <LazyPortfolioRotatedGrid />
       </section>
-      <section className={`${styles.testimonials}`}>
-        {/* TODO TESTIMONIALS */}
-      </section>
+      {/* <section className={`${styles.testimonials}`}>
+        TODO TESTIMONIALS
+      </section> */}
     </main>
   );
 }
