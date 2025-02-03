@@ -11,7 +11,7 @@ import IconGithub from "@/components/svgs/footer-icons/icon-github.component";
 import IconInvoice from "@/components/svgs/footer-icons/icon-invoice.component";
 import HeroImg from "@/public/hero.png";
 // React/Next Functions
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -62,7 +62,8 @@ const Page = () => {
   });
 
   useEffect(() => {
-    const initialValuesFromSessionStorage = getInitialValuesFromSessionStorage();
+    const initialValuesFromSessionStorage =
+      getInitialValuesFromSessionStorage();
     if (initialValuesFromSessionStorage) {
       setChoosedOptionForm(1);
       setInitialValues(initialValuesFromSessionStorage);
@@ -154,8 +155,6 @@ const Page = () => {
   };
 
   const handleSubmit = async (formData) => {
-    console.log(formData);
-
     setLoaderProps({ isLoading: true, status: null, message: "" });
     var message;
     try {

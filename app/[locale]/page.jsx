@@ -42,19 +42,28 @@ export default function Home() {
               textColor="var(--color-text-reverse)"
               borderSize="none"
               hoverEffect="scaleForward"
-              ariaLabel={lang('heroSection.btn.0.aria')}
+              ariaLabel={lang("heroSection.btn.0.aria")}
             >
               {lang("heroSection.btn.0.content")}
             </Btn>
           </div>
         </div>
         <div className={`${styles.imgContainer}`}>
-          <Image src={HeroImg} alt={lang('heroSection.img.0.alt')} aria-label={lang('heroSection.img.0.alt')} priority={true} />
+          <Image
+            src={HeroImg}
+            alt={lang("heroSection.img.0.alt")}
+            aria-label={lang("heroSection.img.0.alt")}
+            priority={true}
+          />
         </div>
       </section>
       <section className={`${styles.services}`}>
         <div className={`${styles.imgContainer}`}>
-          <Image src={HeroImg} alt={lang('servicesSection.img.0.alt')} aria-label={lang('servicesSection.img.0.alt')} />
+          <Image
+            src={HeroImg}
+            alt={lang("servicesSection.img.0.alt")}
+            aria-label={lang("servicesSection.img.0.alt")}
+          />
         </div>
         <div className={`${styles.contentContainer}`}>
           <div className={`${styles.titleContainer}`}>
@@ -80,7 +89,7 @@ export default function Home() {
             textColor="var(--color-text-reverse)"
             borderSize="none"
             hoverEffect="scaleForward"
-            ariaLabel={lang('servicesSection.btn.0.aria')}
+            ariaLabel={lang("servicesSection.btn.0.aria")}
           >
             {lang("servicesSection.btn.0.content")}
           </Btn>
