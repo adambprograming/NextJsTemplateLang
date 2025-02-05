@@ -89,18 +89,16 @@ export const Showcase = ({
   );
 };
 
-export const ShowcaseItem = ({
-  children,
-  heightOfItem,
-  widthOfItem,
-}) => {
-
+export const ShowcaseItem = ({ children, heightOfItem, widthOfItem }) => {
   return (
-    <div className={`${styles.showcaseItem}`} style={{
-      height: `${heightOfItem}`,
-      width: `${widthOfItem}`
-    }}>
+    <div
+      className={`${styles.showcaseItem}`}
+      style={{
+        height: `${heightOfItem}`,
+        width: `${widthOfItem}`,
+      }}
+    >
       {children}
     </div>
-  )
+  );
 };

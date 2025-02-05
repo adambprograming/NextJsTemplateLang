@@ -71,13 +71,25 @@ export default function LoaderForResponse({
           >
             {status === "success" ? (
               <>
-                <IconCheckCircle width={36} height={36} style={{color: "var(--color-success)"}} />
-                <h4 style={{textAlign: "center", maxWidth: "fit-content"}}>{message || lang("defaultMessage.success")}</h4>
+                <IconCheckCircle
+                  width={36}
+                  height={36}
+                  style={{ color: "var(--color-success)" }}
+                />
+                <h4 style={{ textAlign: "center", maxWidth: "fit-content" }}>
+                  {message || lang("defaultMessage.success")}
+                </h4>
               </>
             ) : (
               <>
-                <IconXCircle width={36} height={36} style={{color: "var(--color-error)"}} />
-                <h4 style={{textAlign: "center", maxWidth: "fit-content"}}>{message || lang("defaultMessage.error")}</h4>
+                <IconXCircle
+                  width={36}
+                  height={36}
+                  style={{ color: "var(--color-error)" }}
+                />
+                <h4 style={{ textAlign: "center", maxWidth: "fit-content" }}>
+                  {message || lang("defaultMessage.error")}
+                </h4>
               </>
             )}
             <Btn

@@ -7,7 +7,12 @@ $padding-inputs: 10px 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin: auto 0;
     text-align: left;
   }
@@ -424,7 +429,6 @@ $padding-inputs: 10px 20px;
     }
   }
 }
-
 
 @media only screen and (pointer: fine) {
   .formBtnSubmit {

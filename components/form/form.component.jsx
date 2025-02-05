@@ -83,7 +83,7 @@ export const Form = ({
       });
     }
   }, [initialValues]);
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -140,7 +140,7 @@ export const Form = ({
         padding: `${padding}`,
         backgroundColor: `${bgColor}`,
         borderRadius: `${borderRadius}`,
-        border: `${borderSize} solid ${borderColor}`
+        border: `${borderSize} solid ${borderColor}`,
       }}
       ref={formRef}
       onSubmit={handleSubmit}
@@ -1289,7 +1289,9 @@ export const FormPickerOption = ({
 }) => {
   return (
     <button
-      className={`${styles.formPickerOption} ${selected ? styles.selected : ""}`}
+      className={`${styles.formPickerOption} ${
+        selected ? styles.selected : ""
+      }`}
       style={{
         fontSize: `${fontSize}`,
         fontWeight: `${fontWeight}`,

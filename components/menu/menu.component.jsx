@@ -40,25 +40,25 @@ export const Menu = ({
   // menu will be dropdown (false) or inline (true)
   const [canBeInline, setCanBeInline] = useState(true);
   // ref for menu
-  const menuRef = useRef(null)
+  const menuRef = useRef(null);
   // func to handle click outside of menu and all child - if menu active, close it
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
       if (menuRef.current.getElementsByClassName(styles.active)) {
-        closeMenuFunction()
+        closeMenuFunction();
       }
     }
   };
   // Listener for mouseClick
   useEffect(() => {
     // Add event listener when the component is mounted
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
 
     // Clean up the event listener when the component is unmounted
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   // update state widthOfContainer
   const updateWidthOfContainer = () => {
@@ -92,9 +92,7 @@ export const Menu = ({
         setWidthOfAllLinks(newWidth);
         setHeightOfLink(newHeight);
       }
-    } catch (error) {
-      
-    }
+    } catch (error) {}
   };
   // on initial load make listeners for resize that will call both func; updateWidthOfContainer & updateSizeOfLinks
   useEffect(() => {
@@ -153,7 +151,7 @@ export const Menu = ({
     disactiveSubmenus();
   };
   const openMenuFunction = () => {
-    if (!activeMenu) {   
+    if (!activeMenu) {
       document
         .getElementsByClassName(styles.line1)
         .item(0)
@@ -165,7 +163,7 @@ export const Menu = ({
       document
         .getElementsByClassName(styles.line3)
         .item(0)
-        .classList.remove(styles.noAnimation);   
+        .classList.remove(styles.noAnimation);
       document
         .getElementsByClassName(styles.menuIcon)
         .item(0)
@@ -179,7 +177,9 @@ export const Menu = ({
   }, [canBeInline]);
   // Disactive active submenu
   const disactiveSubmenus = () => {
-    const listOfSubmenus = document.getElementsByClassName(styles.submenuDropdown);
+    const listOfSubmenus = document.getElementsByClassName(
+      styles.submenuDropdown
+    );
     for (let i = 0; i < listOfSubmenus.length; i++) {
       const element = listOfSubmenus[i];
       element.classList.remove(styles.active);
@@ -194,7 +194,7 @@ export const Menu = ({
     <nav
       id={`${canBeInline ? styles.navInline : styles.navDropdown}`}
       className={`${location === "right" ? styles.sideRight : styles.sideLeft}`}
-      style={{ fontFamily: `${fontFamily}`}}
+      style={{ fontFamily: `${fontFamily}` }}
       ref={menuRef}
     >
       <div
@@ -245,7 +245,9 @@ export const MenuItem = ({
   openMenuFunction,
 }) => {
   const handleSubmenuClick = (e) => {
-    const listOfSubmenus = document.getElementsByClassName(styles.submenuDropdown);
+    const listOfSubmenus = document.getElementsByClassName(
+      styles.submenuDropdown
+    );
     const activeSubmenu = [];
     const targetSubmenu = e.target.querySelector(`.${styles.submenuDropdown}`);
     for (let i = 0; i < listOfSubmenus.length; i++) {
@@ -257,7 +259,7 @@ export const MenuItem = ({
     }
     if (activeSubmenu[0] !== targetSubmenu && targetSubmenu) {
       targetSubmenu.classList.add(styles.active);
-      openMenuFunction()
+      openMenuFunction();
     }
   };
   return (

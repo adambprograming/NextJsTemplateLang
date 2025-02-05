@@ -1,4 +1,4 @@
-"use client"
+"use client";
 // Styles
 import styles from "./card.module.scss";
 // Public & Assets
@@ -64,7 +64,9 @@ export const Card = ({
         "--localFilter": `${filter}`,
         "--localFilterHover": `${filterHover ? filterHover : filter}`,
         "--localBackdropFilter": `${backdropFilter}`,
-        "--localBackdropFilterHover": `${backdropFilterHover ? backdropFilterHover : backdropFilter}`,
+        "--localBackdropFilterHover": `${
+          backdropFilterHover ? backdropFilterHover : backdropFilter
+        }`,
         "--localBgColor": `${bgColor}`,
         "--localBgHoverColor": `${bgHoverColor ? bgHoverColor : bgColor}`,
       }}
@@ -156,7 +158,7 @@ export const FlipCard = ({
           "--localBgColor": `${bgColor}`,
           "--localBgHoverColor": `${bgHoverColor}`,
         }}
-        >
+      >
         <div
           className={`${styles.cardFront}`}
           style={{

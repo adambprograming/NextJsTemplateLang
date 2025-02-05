@@ -8,7 +8,7 @@ import FlagOfPl from "../../public/flags/Flag_of_Poland.png";
 import FlagOfHu from "../../public/flags/Flag_of_Hungary.png";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { useRouter, usePathname } from '@/i18n/routing';
+import { useRouter, usePathname } from "@/i18n/routing";
 import { useLocale } from "next-intl";
 
 const flags = {
@@ -48,7 +48,7 @@ const MenuLanguage = ({
 
   const handleLanguageChange = (language) => {
     setDropdownOpen(false);
-    router.replace(`${pathname}`, {locale: `${language}`});
+    router.replace(`${pathname}`, { locale: `${language}` });
   };
 
   const handleClickOutside = (event) => {
@@ -61,24 +61,23 @@ const MenuLanguage = ({
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-  
+
   useEffect(() => {
     const updateScreenSize = () => {
       setIsSmallScreen(window.innerWidth <= 768); // Adjust breakpoint as needed
     };
-  
+
     // Set initial value
     updateScreenSize();
-  
+
     // Add resize event listener
     window.addEventListener("resize", updateScreenSize);
-  
+
     // Cleanup listener on component unmount
     return () => {
       window.removeEventListener("resize", updateScreenSize);
     };
   }, []);
-
 
   return (
     <div
@@ -102,7 +101,7 @@ const MenuLanguage = ({
         }}
       >
         <Image src={flags[locale]} alt={`Flag of ${languageNames[locale]}`} />
-        {(!isSmallScreen && !iconOnly) && (
+        {!isSmallScreen && !iconOnly && (
           <span
             style={{
               fontSize: `${fontSize}`,
@@ -114,34 +113,36 @@ const MenuLanguage = ({
         )}
       </button>
 
-
-        <div className={`${styles.menuDropdown} ${isDropdownOpen ? styles.active : ""}`}>
-          {languages
-            .filter((language) => language !== locale)
-            .map((language) => (
-              <button
-                key={language}
-                onClick={() => handleLanguageChange(language)}
-                style={{ padding: `${paddingOfBtn}` }}
-              >
-                <Image
-                  src={flags[language]}
-                  alt={`Flag of ${languageNames[language]}`}
-                />
-                {(!isSmallScreen && !iconOnly) && (
-                  <span
-                    style={{
-                      fontSize: `${fontSize}`,
-                      fontFamily: `${fontFamily}`,
-                    }}
-                  >
-                    {languageNames[language]}
-                  </span>
-                )}
-              </button>
-            ))}
-        </div>
-      
+      <div
+        className={`${styles.menuDropdown} ${
+          isDropdownOpen ? styles.active : ""
+        }`}
+      >
+        {languages
+          .filter((language) => language !== locale)
+          .map((language) => (
+            <button
+              key={language}
+              onClick={() => handleLanguageChange(language)}
+              style={{ padding: `${paddingOfBtn}` }}
+            >
+              <Image
+                src={flags[language]}
+                alt={`Flag of ${languageNames[language]}`}
+              />
+              {!isSmallScreen && !iconOnly && (
+                <span
+                  style={{
+                    fontSize: `${fontSize}`,
+                    fontFamily: `${fontFamily}`,
+                  }}
+                >
+                  {languageNames[language]}
+                </span>
+              )}
+            </button>
+          ))}
+      </div>
     </div>
   );
 };

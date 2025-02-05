@@ -89,8 +89,6 @@ export const Carousel = ({
   };
 
   const prev = () => {
-    console.log(isTransitioning);
-
     if (!isTransitioning) {
       if (infinite === "infinite" || currentIndex > 0) {
         setIsTransitioning(true);

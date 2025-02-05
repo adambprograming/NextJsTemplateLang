@@ -63,7 +63,7 @@ const ColorThemeSwitch = ({ variant = "first" }) => {
           ? styles.thirdVariant
           : ""
       }`}
-      aria-label={lang('aria')}
+      aria-label={lang("aria")}
       onClick={toggleTheme}
     >
       {(variant === "second" || variant === "third") && (

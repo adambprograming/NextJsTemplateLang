@@ -21,7 +21,7 @@ import { useTranslations } from "next-intl";
 import Popup from "../../components/popup/popup.component";
 
 const Footer = () => {
-  const lang = useTranslations("footer")
+  const lang = useTranslations("footer");
   const phoneNumber = "+42077780333073";
   const emailAddress = "ab@adam-bartusek.cz";
   const [popupPhone, setPopupPhone] = useState(false);
@@ -78,24 +78,32 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-container-info">
           <div className="footer-nav">
-            <span>{lang('nav.title')}</span>
+            <span>{lang("nav.title")}</span>
             <ul>
               <li>
-                <Link href="/" aria-label={lang('nav.list.0.aria')}>{lang('nav.list.0.content')}</Link>
+                <Link href="/" aria-label={lang("nav.list.0.aria")}>
+                  {lang("nav.list.0.content")}
+                </Link>
               </li>
               <li>
-                <Link href="/o-mne" aria-label={lang('nav.list.1.aria')}>{lang('nav.list.1.content')}</Link>
+                <Link href="/o-mne" aria-label={lang("nav.list.1.aria")}>
+                  {lang("nav.list.1.content")}
+                </Link>
               </li>
               <li>
-                <Link href="/sluzby" aria-label={lang('nav.list.2.aria')}>{lang('nav.list.2.content')}</Link>
+                <Link href="/sluzby" aria-label={lang("nav.list.2.aria")}>
+                  {lang("nav.list.2.content")}
+                </Link>
               </li>
               <li>
-                <Link href="/kontakt" aria-label={lang('nav.list.3.aria')}>{lang('nav.list.3.content')}</Link>
+                <Link href="/kontakt" aria-label={lang("nav.list.3.aria")}>
+                  {lang("nav.list.3.content")}
+                </Link>
               </li>
             </ul>
           </div>
           <div className="footer-contacts">
-            <span>{lang('contacts.title')}</span>
+            <span>{lang("contacts.title")}</span>
             <div className="footer-icons">
               <span
                 className="footer-phone"
@@ -104,7 +112,7 @@ const Footer = () => {
                 }}
               >
                 <IconPhone />
-                <Popup state={popupPhone}>{lang('contacts.popup')}</Popup>
+                <Popup state={popupPhone}>{lang("contacts.popup")}</Popup>
               </span>
               <span
                 className="footer-email"
@@ -113,13 +121,13 @@ const Footer = () => {
                 }}
               >
                 <IconEmail />
-                <Popup state={popupEmail}>{lang('contacts.popup')}</Popup>
+                <Popup state={popupEmail}>{lang("contacts.popup")}</Popup>
               </span>
               <Link
                 href="https://www.google.com/maps/place/Pardubice/@50.0342266,15.4292331,10z/data=!3m1!4b1!4m6!3m5!1s0x470dc94b239307b5:0x12d59894ccf624ae!8m2!3d50.0343092!4d15.7811994!16zL20vMGNoNTQ?entry=ttu"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={lang('contacts.link.0.aria')}
+                aria-label={lang("contacts.link.0.aria")}
               >
                 <IconLocation />
               </Link>
@@ -135,7 +143,7 @@ const Footer = () => {
                 href="https://www.instagram.com/_adaamb/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={lang('contacts.link.2.aria')}
+                aria-label={lang("contacts.link.2.aria")}
               >
                 <IconInstagram />
               </Link>
@@ -151,7 +159,7 @@ const Footer = () => {
                 href={`https://www.linkedin.com/in/adam-bart%C5%AF%C5%A1ek-251107286/?locale=cs_CZ`}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={lang('contacts.link.4.aria')}
+                aria-label={lang("contacts.link.4.aria")}
               >
                 <IconLinkedin />
               </Link>
@@ -167,7 +175,7 @@ const Footer = () => {
                 href="https://github.com/adambprograming"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={lang('contacts.link.6.aria')}
+                aria-label={lang("contacts.link.6.aria")}
               >
                 <IconGithub />
               </Link>
@@ -175,19 +183,21 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-container-copyright">
-          <p>{lang('copyright.0')}&copy;{lang('copyright.1')}</p>
           <p>
-            <span>{lang('createdBy.0')}</span>
+            {lang("copyright.0")}&copy;{lang("copyright.1")}
+          </p>
+          <p>
+            <span>{lang("createdBy.0")}</span>
             <Link
               href="https://www.adam-bartusek.cz/"
               target="_blank"
               rel="noopener"
-              aria-label={lang('link.0.aria')}
+              aria-label={lang("link.0.aria")}
             >
-              {lang('link.0.content')}
+              {lang("link.0.content")}
             </Link>
             <span>.</span>
-            <span>{lang('createdBy.1')}</span>
+            <span>{lang("createdBy.1")}</span>
           </p>
         </div>
       </div>
