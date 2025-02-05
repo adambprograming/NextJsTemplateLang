@@ -24,15 +24,10 @@ export default function NotFound() {
         padding: "2rem",
       }}
     >
-      <h1 style={{ fontSize: "2rem", margin: 0 }}>{lang('title')}</h1>
-      <p style={{ margin: 0 }}>
-        {lang('text')}
-      </p>
-      <Btn
-        href="/"
-        bgColor="var(--color-secondary)"
-      >
-        {lang('btn.0.content')}
+      <h1 style={{ fontSize: "2rem", margin: 0 }}>{lang("title")}</h1>
+      <p style={{ margin: 0 }}>{lang("text")}</p>
+      <Btn href="/" bgColor="var(--color-secondary)">
+        {lang("btn.0.content")}
       </Btn>
     </main>
   );

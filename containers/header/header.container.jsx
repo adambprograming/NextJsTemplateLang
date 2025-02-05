@@ -31,9 +31,9 @@ const Header = ({ variant = "leftsettings-centerlogo-rightmenu" }) => {
           <MenuItem content="TEST" href="/test"></MenuItem>
         </MenuItem> */}
         {/* <MenuItem content="Portfolio" href="/portfolio" /> */}
-        <MenuItem content={lang('menu.0')} href="/o-mne"/>
-        <MenuItem content={lang('menu.1')} href="/sluzby"/>
-        <MenuItem content={lang('menu.2')} href="/kontakt"/>
+        <MenuItem content={lang("menu.0")} href="/o-mne" />
+        <MenuItem content={lang("menu.1")} href="/sluzby" />
+        <MenuItem content={lang("menu.2")} href="/kontakt" />
       </Menu>
     );
   };
@@ -42,15 +42,23 @@ const Header = ({ variant = "leftsettings-centerlogo-rightmenu" }) => {
     return (
       <div className="header-settings">
         <ColorThemeSwitch variant="third" />
-        <MenuLanguage languages={["cs", "en"]} variant="second" iconOnly={false} />
+        <MenuLanguage
+          languages={["cs", "en"]}
+          variant="second"
+          iconOnly={false}
+        />
       </div>
     );
   };
 
   const renderLogo = () => {
     return (
-      <Link href="/" aria-label={lang('link.0.aria')}>
-        <Logo alt={lang('img.0.alt')} id="logo-header" aria-label={lang('img.0.aria')} />
+      <Link href="/" aria-label={lang("link.0.aria")}>
+        <Logo
+          alt={lang("img.0.alt")}
+          id="logo-header"
+          aria-label={lang("img.0.aria")}
+        />
       </Link>
     );
   };

@@ -323,7 +323,7 @@
       ],
       "popup": "Zkopírováno!"
     },
-    "copyright": ["Adam Bartůšek ", " 2022-2024."],
+    "copyright": ["Adam Bartůšek ", " 2022-2025."],
     "createdBy": ["Vytvořil", "Všechna práva vyhrazena."],
     "link": [
       {
@@ -602,7 +602,7 @@
             "1-5 stránek",
             "Responzivita webu",
             "Optimalizace SEO",
-            "Vlastní doména včetně možnosti firemního e-mailu.",
+            "Vlastní doména včetně možnosti firemního e-mailu",
             "Rychlá navigace na stránce",
             "Denní a noční režim",
             "Možnost rozšíření - vícejazyčnost a Systém úpravy obsahu"
@@ -703,8 +703,7 @@
       "info": [
         "Rozdělení je pouze orientační, vždy se můžeme domluvit na individuálním řešení.",
         "V případě, že již máte webové stránky, můžeme společně domluvit lepší podmínky pro vedení stránek, nebo je zmodernizovat.",
-        "Cena zde nejde přesně určit, odvíjí se primárně od složitosti a velikosti webové aplikace, standartně je počítána podle hodin strávených na projektu.",
-        "V případě, že již máte webové stránky, můžeme společně domluvit lepší podmínky pro vedení stránek, nebo je zmodernizovat."
+        "Cena zde nejde přesně určit, odvíjí se primárně od složitosti a velikosti webové aplikace, standartně je počítána podle hodin strávených na projektu."
       ],
       "fillFormData": {
         "web1": {

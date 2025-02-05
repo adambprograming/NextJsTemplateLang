@@ -2,7 +2,13 @@
 
 import nodemailer from "nodemailer";
 
-export async function sendEmail({ name, surname, email, phoneNumber, message }) {
+export async function sendEmail({
+  name,
+  surname,
+  email,
+  phoneNumber,
+  message,
+}) {
   if (!name || !surname || !email || !phoneNumber || !message) {
     return { success: false, error: 0 };
   }

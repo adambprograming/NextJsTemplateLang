@@ -78,7 +78,7 @@ const Btn = ({
         border: `${borderSize} solid ${borderColor}`,
         width: `${width}`,
         "--localFilter": `${filter}`,
-        cursor: `${disabled ? "default" : "pointer"}`
+        cursor: `${disabled ? "default" : "pointer"}`,
       }}
       onClick={() => {
         itsLinkBtn

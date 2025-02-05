@@ -113,7 +113,7 @@
     .cardFront {
       clip-path: polygon(100% 0, 100% 80%, 80% 100%, 0 100%, 0 0);
       position: relative;
-      
+
       &::after {
         content: "";
         position: absolute;
@@ -126,12 +126,12 @@
         border-top-left-radius: 25px;
       }
     }
-    &:not(.clicked) .cardInner {
-      // transform: rotateY(0deg);
-    }
-    &.clicked .cardInner {
-      // transform: rotateY(180deg);
-    }
+    // &:not(.clicked) .cardInner {
+    // transform: rotateY(0deg);
+    // }/*  */
+    // &.clicked .cardInner {
+    // transform: rotateY(180deg);
+    // }
     .cardInner {
       border-radius: 25px;
       overflow: hidden;

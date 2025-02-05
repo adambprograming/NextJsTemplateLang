@@ -129,7 +129,9 @@
         a {
           margin: 5px 5px;
           padding: 10px 20px;
-          background-color: rgb(from var(--color-text-light-still) r g b / 0.75);;
+          background-color: rgb(
+            from var(--color-text-light-still) r g b / 0.75
+          );
           border-radius: var(--border-radius-btn);
           color: var(--color-text-dark-still);
           text-decoration: none;

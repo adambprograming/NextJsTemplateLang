@@ -323,7 +323,7 @@
       ],
       "popup": "Copied!"
     },
-    "copyright": ["Adam Bartůšek ", " 2022-2024."],
+    "copyright": ["Adam Bartůšek ", " 2022-2025."],
     "createdBy": ["Created by", "All rights reserved."],
     "link": [
       {
@@ -703,8 +703,7 @@
       "info": [
         "The categorization is only indicative; we can always agree on a custom solution.",
         "If you already have a website, we can discuss better management terms or modernize it together.",
-        "The price cannot be precisely determined here; it primarily depends on the complexity and size of the web application, and it is usually calculated based on the hours spent on the project.",
-        "If you already have a website, we can discuss better management terms or modernize it together."
+        "The price cannot be precisely determined here; it primarily depends on the complexity and size of the web application, and it is usually calculated based on the hours spent on the project."
       ],
       "fillFormData": {
         "web1": {

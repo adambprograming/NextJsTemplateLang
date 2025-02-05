@@ -1,12 +1,12 @@
 .carousel {
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    // cursor: grab;
-    // &:active{
-    //     cursor: grabbing;
-    // }
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  // cursor: grab;
+  // &:active{
+  //     cursor: grabbing;
+  // }
   .navBtn {
     font-size: large;
     position: absolute;
@@ -16,7 +16,7 @@
     border: none;
     cursor: pointer;
     width: clamp(20px, 7%, 100px);
-    &::before{
+    &::before {
       content: "";
       position: absolute;
       z-index: -1;
@@ -51,32 +51,31 @@
       align-items: center;
       background-color: transparent; // Example background color
       img {
-          width: 100%;
-          height: auto;
-          -webkit-user-drag: none;
+        width: 100%;
+        height: auto;
+        -webkit-user-drag: none;
       }
     }
   }
   // &.cube .carouselInner .carouselItem {
-    // position: absolute;
-    // transition: transform 0.5s, opacity 0.5s;
-    // &.leftToActive {
-    //   transform: translateY(-10px) scaleX(0) skewY(10deg) !important;
-    //   opacity: 0.5;
-    // }
-    // &.active {
-    //   position: relative;
-    //   transform: translateY(0px) scaleX(1) !important;
-    //   opacity: 1;
-    // }
-    // &.rightToActive {
-    //   transform: translateY(-10px) scaleX(0) skewY(-10deg) !important;
-    //   opacity: 0.5;
-    // }
-    // &.other{
-    //   transform: translateY(0px) scaleX(0) !important;
-    //   opacity: 0.5;
-    // }
+  // position: absolute;
+  // transition: transform 0.5s, opacity 0.5s;
+  // &.leftToActive {
+  //   transform: translateY(-10px) scaleX(0) skewY(10deg) !important;
+  //   opacity: 0.5;
+  // }
+  // &.active {
+  //   position: relative;
+  //   transform: translateY(0px) scaleX(1) !important;
+  //   opacity: 1;
+  // }
+  // &.rightToActive {
+  //   transform: translateY(-10px) scaleX(0) skewY(-10deg) !important;
+  //   opacity: 0.5;
+  // }
+  // &.other{
+  //   transform: translateY(0px) scaleX(0) !important;
+  //   opacity: 0.5;
+  // }
   // }
 }
-
