@@ -28,7 +28,7 @@ const Page = () => {
   const lang = useTranslations("aboutPage");
   const showcaseLang = useTranslations("components.showcase");
   return (
-    <main className={styles.main}>
+    <main className={`${styles.main}`}>
       <section className={`${styles.introduction}`}>
         <div className={`${styles.imgContainer}`}>
           <Image

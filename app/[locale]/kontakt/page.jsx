@@ -193,7 +193,7 @@ const Page = () => {
   };
 
   return (
-    <main className={styles.main}>
+    <main className={`${styles.main}`}>
       <section className={`${styles.contacts}`}>
         <div className={`${styles.contentContainer}`}>
           <div className={`${styles.titleContainer}`}>
