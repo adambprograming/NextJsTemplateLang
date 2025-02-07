@@ -18,6 +18,9 @@ INSTRUCTIONS
   gap                                 gap between items
   heightOfItem                        height of each item
   widthOfItem                         width of each item
+  animationDuration                   duration of animation of showcase (default to 30s)
+  stylesForShowcase                   additional styles apply to showcase component
+  stylesForItem                       addotional styles apply to showcase items
 */
 
 export const Showcase = ({
@@ -27,6 +30,9 @@ export const Showcase = ({
   gap = "4rem",
   heightOfItem = "var(--fontsize-h2)",
   widthOfItem = "auto",
+  animationDuration = "30s",
+  stylesForShowcase = {},
+  stylesForItem = {},
 }) => {
   const [isOverflow, setIsOverflow] = useState(false);
   const showcaseRef = useRef(null);
@@ -55,6 +61,8 @@ export const Showcase = ({
           padding: `${paddingTopAndBottomOfShowcase} 0px`,
           gap: `${gap}`,
           paddingRight: `${gap}`,
+          "--animation-time": animationDuration,
+          ...stylesForShowcase,
         }}
         ref={showcaseRef}
       >
@@ -62,6 +70,7 @@ export const Showcase = ({
           return cloneElement(child, {
             heightOfItem: heightOfItem,
             widthOfItem: widthOfItem,
+            stylesForItem: stylesForItem,
           });
         })}
       </div>
@@ -75,12 +84,15 @@ export const Showcase = ({
             padding: `${paddingTopAndBottomOfShowcase} 0px`,
             gap: `${gap}`,
             paddingRight: `${gap}`,
+            "--animation-time": animationDuration,
+            ...stylesForShowcase,
           }}
         >
           {Children.map(children, (child) => {
             return cloneElement(child, {
               heightOfItem: heightOfItem,
               widthOfItem: widthOfItem,
+              stylesForItem: stylesForItem,
             });
           })}
         </div>
@@ -89,13 +101,14 @@ export const Showcase = ({
   );
 };
 
-export const ShowcaseItem = ({ children, heightOfItem, widthOfItem }) => {
+export const ShowcaseItem = ({ children, heightOfItem, widthOfItem, stylesForItem }) => {
   return (
     <div
       className={`${styles.showcaseItem}`}
       style={{
         height: `${heightOfItem}`,
         width: `${widthOfItem}`,
+        ...stylesForItem 
       }}
     >
       {children}
