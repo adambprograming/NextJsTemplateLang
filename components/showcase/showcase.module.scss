@@ -1,7 +1,6 @@
 .showcaseImgContainer {
   margin: auto 0;
   display: flex;
-  // overflow-x: hidden;
   > * {
     flex: 0 0 50%;
   }
@@ -14,10 +13,14 @@
     padding-right: 20px;
     will-change: transform;
     &.animated {
-      animation: scrolling 30s linear infinite;
+      animation: scrolling var(--animation-time, 30s) linear infinite;
     }
     .showcaseItem {
       position: relative;
+      white-space: nowrap;
+      font-family: var(--font-primary);
+      font-size: var(--fontsize-h4);
+      font-weight: 600;
       & * {
         height: 100%;
         width: auto;
