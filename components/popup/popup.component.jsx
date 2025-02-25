@@ -1,5 +1,5 @@
 // Styles
-import "./popup.styles.scss";
+import styles from "./popup.module.scss";
 // Public & Assets
 
 // React/Next Functions
@@ -19,7 +19,7 @@ const Popup = ({
 }) => {
   return (
     <div
-      className="popup"
+      className={`${styles.popup}`}
       style={{
         fontSize: `${fontSize}`,
         display: `${state ? "inherit" : "none"}`,

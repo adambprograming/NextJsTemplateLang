@@ -3,7 +3,7 @@ $padding-header: var(--padding-header);
 $gap-header: 2vw;
 $width-logo: clamp(50px, 12vw, 120px);
 
-#article-header {
+#articleHeader {
   padding: var(--padding-page);
   max-width: 1440px;
   display: flex;
@@ -15,16 +15,16 @@ $width-logo: clamp(50px, 12vw, 120px);
 }
 
 // Variant 1
-#article-header.leftsettings-centerlogo-rightmenu {
+#articleHeader.leftsettingsCenterlogoRightmenu {
   display: flex;
   flex-direction: row;
   gap: $gap-header;
   padding: $padding-header;
   max-width: 1440px;
-  .header-container-settings {
+  .headerContainerSettings {
     margin: auto 0;
     width: calc(((100% - ($gap-header * 2)) - $width-logo) / 2);
-    .header-settings {
+    .headerSettings {
       width: fit-content;
       margin: auto auto auto 0;
       display: flex;
@@ -34,9 +34,9 @@ $width-logo: clamp(50px, 12vw, 120px);
       row-gap: 5px;
     }
   }
-  .header-container-logo {
+  .headerContainerLogo {
     margin: auto 0;
-    #logo-header {
+    #logoHeader {
       cursor: pointer;
       width: $width-logo;
       height: auto;
@@ -46,22 +46,22 @@ $width-logo: clamp(50px, 12vw, 120px);
       }
     }
   }
-  #header-container-menu {
+  #headerContainerMenu {
     margin: auto 0;
     width: calc((100% - ($gap-header * 2) - $width-logo) / 2);
   }
 }
 
 // Variant 2
-#article-header.leftlogo-rightmenu-rightsettings {
+#articleHeader.leftlogoRightmenuRightsettings {
   display: flex;
   flex-direction: row;
   gap: $gap-header;
   padding: $padding-header;
   max-width: var(--breakpoint-1440);
-  .header-container-logo {
+  .headerContainerLogo {
     margin: auto 0;
-    #logo-header {
+    #logoHeader {
       cursor: pointer;
       width: $width-logo;
       height: auto;
@@ -71,29 +71,29 @@ $width-logo: clamp(50px, 12vw, 120px);
       }
     }
   }
-  #header-container-menu {
+  #headerContainerMenu {
     margin: auto 0;
     width: 100%;
   }
-  .header-container-settings {
+  .headerContainerSettings {
     margin: auto 0;
   }
 }
 
 // Variant 3
-#article-header.leftmenu-centerlogo-rightsettings {
+#articleHeader.leftmenuCenterlogoRightsettings {
   display: flex;
   flex-direction: row;
   gap: $gap-header;
   padding: $padding-header;
   max-width: var(--breakpoint-1440);
-  #header-container-menu {
+  #headerContainerMenu {
     margin: auto 0;
     width: calc((100% - ($gap-header * 2) - $width-logo) / 2);
   }
-  .header-container-logo {
+  .headerContainerLogo {
     margin: auto 0;
-    #logo-header {
+    #logoHeader {
       cursor: pointer;
       width: $width-logo;
       height: auto;
@@ -103,17 +103,17 @@ $width-logo: clamp(50px, 12vw, 120px);
       }
     }
   }
-  .header-container-settings {
+  .headerContainerSettings {
     margin: auto 0;
     width: calc(((100% - ($gap-header * 2)) - $width-logo) / 2);
-    .header-settings {
+    .headerSettings {
       width: fit-content;
       margin: auto 0 auto auto;
     }
   }
 }
 
-#article-header.fixedOnScrollUp {
+#articleHeader.fixedOnScrollUp {
   position: fixed;
   top: 0;
   z-index: 100000000000000000;
@@ -138,7 +138,7 @@ $width-logo: clamp(50px, 12vw, 120px);
   }
 }
 
-#article-header.fixedAllTime {
+#articleHeader.fixedAllTime {
   position: fixed;
   top: 0;
   z-index: 100000000000000000;

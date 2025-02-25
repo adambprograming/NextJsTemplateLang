@@ -1,6 +1,6 @@
 "use client";
 // Styles
-import "./header.styles.scss";
+import styles from "./header.module.scss";
 // Public & Assets
 import Logo from "@/components/svgs/logo.component.jsx";
 // React/Next Functions
@@ -16,10 +16,10 @@ import MenuLanguage from "@/components/menu-language/menu-language.component";
 
 /*
 INSTRUCTIONS
-  variant           variant of menu (default is leftsettings-centerlogo-rightmenu)
+  variant           variant of menu (default is leftsettingsCenterlogoRightmenu)
                     others: 
-                      leftlogo-rightmenu-rightsettings
-                      leftmenu-centerlogo-rightsettings
+                      leftlogoRightmenuRightsettings
+                      leftmenuCenterlogoRightsettings
   headerOption      define if and how header will act
                       0: header will be position static
                       1: header will be fixed and on scroll down dissapear
@@ -29,7 +29,7 @@ INSTRUCTIONS
   stylesForHeader   additional styles apply to header container
 */
 const Header = ({
-  variant = "leftsettings-centerlogo-rightmenu",
+  variant = "leftsettingsCenterlogoRightmenu",
   headerOption = 0,
   bgColor = "rgb(from var(--color-background) r g b / 0.5)",
   backdropFilter = "blur(4px)",
@@ -91,7 +91,7 @@ const Header = ({
 
   const renderSettings = () => {
     return (
-      <div className="header-settings">
+      <div className={`${styles.headerSettings}`}>
         <ColorThemeSwitch variant="third" />
         <MenuLanguage
           languages={["cs", "en"]}
@@ -107,7 +107,7 @@ const Header = ({
       <Link href="/" aria-label={lang("link.0.aria")}>
         <Logo
           alt={lang("img.0.alt")}
-          id="logo-header"
+          id={`${styles.logoHeader}`}
           aria-label={lang("img.0.aria")}
         />
       </Link>
@@ -115,19 +115,19 @@ const Header = ({
   };
 
   // returns based on variants
-  if (variant === "leftsettings-centerlogo-rightmenu") {
+  if (variant === "leftsettingsCenterlogoRightmenu") {
     return (
       <header
-        id="article-header"
+        id={`${styles.articleHeader}`}
         ref={headerRef}
-        className={`${variant} ${
-          headerOption === 0
+        className={`${styles[variant]} ${
+          styles[headerOption === 0
             ? ""
             : headerOption === 1
             ? `fixedOnScrollUp ${isVisible ? "visible" : "hidden"}`
             : headerOption === 2
             ? "fixedAllTime"
-            : ""
+            : ""]
         }`}
         style={{
           backgroundColor: `${bgColor}`,
@@ -135,26 +135,26 @@ const Header = ({
           ...stylesForHeader,
         }}
       >
-        <div className="header-container-settings">
+        <div className={`${styles.headerContainerSettings}`}>
           {renderSettings("left")}
         </div>
-        <div className="header-container-logo">{renderLogo()}</div>
-        <div id="header-container-menu">{renderMenu("right")}</div>
+        <div className={`${styles.headerContainerLogo}`}>{renderLogo()}</div>
+        <div id={`${styles.headerContainerMenu}`}>{renderMenu("right")}</div>
       </header>
     );
-  } else if (variant === "leftlogo-rightmenu-rightsettings") {
+  } else if (variant === "leftlogoRightmenuRightsettings") {
     return (
       <header
-        id="article-header"
+        id={`${styles.articleHeader}`}
         ref={headerRef}
-        className={`${variant} ${
-          headerOption === 0
+        className={`${styles[variant]} ${
+          styles[headerOption === 0
             ? ""
             : headerOption === 1
             ? `fixedOnScrollUp ${isVisible ? "visible" : "hidden"}`
             : headerOption === 2
             ? "fixedAllTime"
-            : ""
+            : ""]
         }`}
         style={{
           backgroundColor: `${bgColor}`,
@@ -162,26 +162,26 @@ const Header = ({
           ...stylesForHeader,
         }}
       >
-        <div className="header-container-logo">{renderLogo()}</div>
-        <div id="header-container-menu">{renderMenu("right")}</div>
-        <div className="header-container-settings">
+        <div className={`${styles.headerContainerLogo}`}>{renderLogo()}</div>
+        <div id={`${styles.headerContainerMenu}`}>{renderMenu("right")}</div>
+        <div className={`${styles.headerContainerSettings}`}>
           {renderSettings("right")}
         </div>
       </header>
     );
-  } else if (variant === "leftmenu-centerlogo-rightsettings") {
+  } else if (variant === "leftmenuCenterlogoRightsettings") {
     return (
       <header
-        id="article-header"
+        id={`${styles.articleHeader}`}
         ref={headerRef}
-        className={`${variant} ${
-          headerOption === 0
+        className={`${styles[variant]} ${
+          styles[headerOption === 0
             ? ""
             : headerOption === 1
             ? `fixedOnScrollUp ${isVisible ? "visible" : "hidden"}`
             : headerOption === 2
             ? "fixedAllTime"
-            : ""
+            : ""]
         }`}
         style={{
           backgroundColor: `${bgColor}`,
@@ -189,9 +189,9 @@ const Header = ({
           ...stylesForHeader,
         }}
       >
-        <div id="header-container-menu">{renderMenu("left")}</div>
-        <div className="header-container-logo">{renderLogo()}</div>
-        <div className="header-container-settings">
+        <div id={`${styles.headerContainerMenu}`}>{renderMenu("left")}</div>
+        <div className={`${styles.headerContainerLogo}`}>{renderLogo()}</div>
+        <div className={`${styles.headerContainerSettings}`}>
           {renderSettings("right")}
         </div>
       </header>
@@ -199,16 +199,16 @@ const Header = ({
   } else {
     return (
       <header
-        id="article-header"
+        id={`${styles.articleHeader}`}
         ref={headerRef}
-        className={`${variant} ${
-          headerOption === 0
+        className={`${styles[variant]} ${
+         styles[ headerOption === 0
             ? ""
             : headerOption === 1
             ? `fixedOnScrollUp ${isVisible ? "visible" : "hidden"}`
             : headerOption === 2
             ? "fixedAllTime"
-            : ""
+            : ""]
         }`}
         style={{
           backgroundColor: `${bgColor}`,
