@@ -107,7 +107,7 @@ export default async function RootLayout({ children, params: { locale } }) {
         suppressHydrationWarning={true}
       >
         <NextIntlClientProvider messages={messages}>
-          <Header variant="leftsettings-centerlogo-rightmenu" />
+          <Header variant="leftsettingsCenterlogoRightmenu" />
           {children}
           <Footer />
         </NextIntlClientProvider>

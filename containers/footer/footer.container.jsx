@@ -1,6 +1,6 @@
 "use client";
 // Styles
-import "./footer.styles.scss";
+import styles from "./footer.module.scss";
 // Public & Assets
 import IconEmail from "../../components/svgs/footer-icons/icon-email.component";
 import IconFacebook from "../../components/svgs/footer-icons/icon-facebook.component";
@@ -74,10 +74,10 @@ const Footer = () => {
   };
 
   return (
-    <footer id="article-footer" ref={footerRef}>
-      <div className="footer-container">
-        <div className="footer-container-info">
-          <div className="footer-nav">
+    <footer id={`${styles.articleFooter}`} ref={footerRef}>
+      <div className={`${styles.footerContainer}`}>
+        <div className={`${styles.footerContainerInfo}`}>
+          <div className={`${styles.footerNav}`}>
             <span>{lang("nav.title")}</span>
             <ul>
               <li>
@@ -102,11 +102,11 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="footer-contacts">
+          <div className={`${styles.footerContacts}`}>
             <span>{lang("contacts.title")}</span>
-            <div className="footer-icons">
+            <div className={`${styles.footerIcons}`}>
               <span
-                className="footer-phone"
+                className={`${styles.footerPhone}`}
                 onClick={() => {
                   copyToClipboard(phoneNumber, "phone");
                 }}
@@ -115,7 +115,7 @@ const Footer = () => {
                 <Popup state={popupPhone}>{lang("contacts.popup")}</Popup>
               </span>
               <span
-                className="footer-email"
+                className={`${styles.footerEmail}`}
                 onClick={() => {
                   copyToClipboard(emailAddress, "email");
                 }}
@@ -182,7 +182,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="footer-container-copyright">
+        <div className={`${styles.footerContainerCopyright}`}>
           <p>
             {lang("copyright.0")}&copy;{lang("copyright.1")}
           </p>
