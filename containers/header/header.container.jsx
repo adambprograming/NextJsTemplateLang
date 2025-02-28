@@ -124,10 +124,12 @@ const Header = ({
           styles[headerOption === 0
             ? ""
             : headerOption === 1
-            ? `fixedOnScrollUp ${isVisible ? "visible" : "hidden"}`
+            ? "fixedOnScrollUp"
             : headerOption === 2
             ? "fixedAllTime"
             : ""]
+        } ${
+          styles[headerOption === 1 && isVisible ? "visible" : "hidden"]
         }`}
         style={{
           backgroundColor: `${bgColor}`,
@@ -151,10 +153,12 @@ const Header = ({
           styles[headerOption === 0
             ? ""
             : headerOption === 1
-            ? `fixedOnScrollUp ${isVisible ? "visible" : "hidden"}`
+            ? "fixedOnScrollUp"
             : headerOption === 2
             ? "fixedAllTime"
             : ""]
+        } ${
+          styles[headerOption === 1 && isVisible ? "visible" : "hidden"]
         }`}
         style={{
           backgroundColor: `${bgColor}`,
@@ -178,10 +182,12 @@ const Header = ({
           styles[headerOption === 0
             ? ""
             : headerOption === 1
-            ? `fixedOnScrollUp ${isVisible ? "visible" : "hidden"}`
+            ? "fixedOnScrollUp"
             : headerOption === 2
             ? "fixedAllTime"
             : ""]
+        } ${
+          styles[headerOption === 1 && isVisible ? "visible" : "hidden"]
         }`}
         style={{
           backgroundColor: `${bgColor}`,
