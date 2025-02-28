@@ -24,6 +24,7 @@ const Btn = dynamic(() => import("@/components/btn/btn.component"), {
   ssr: false,
 });
 import LoaderForResponse from "@/components/loader-for-response/loader-for-response.component";
+import Popup from "@/components/popup/popup.component";
 
 import {
   Form,
@@ -132,7 +133,9 @@ const Page = () => {
   };
 
   const handleEmailOrCopy = () => {
-    const mailtoLink = `mailto:${emailAddress}?subject=Hello%20there&body=Dear%20Adam%2C%0D%0A%0D%0AI'm%20interested%20in%20your%20services.%0D%0A%0D%0ABest%20regards%2C%0D%0A[Your%20Name]`;
+    const mailtoLink = `mailto:${emailAddress}?${lang(
+      "contactsSection.mailto"
+    )}`;
     // Copy the email address to clipboard regardless of mailto success
     navigator.clipboard.writeText(emailAddress).then(
       () => {
@@ -212,9 +215,26 @@ const Page = () => {
               <div className={`${styles.specContainer}`}>
                 <span className={`${styles.contactTitle}`}>
                   {lang("contactsSection.btn.0.content")}
-                  {phoneNumberCopied && (
-                    <span>{lang("contactsSection.popup")}</span>
-                  )}
+                  <Popup
+                    state={phoneNumberCopied}
+                    stylesForPopup={{
+                      position: "absolute",
+                      right: "10px",
+                      zIndex: 20,
+                      padding: "5px 15px",
+                      borderRadius: "20px",
+                      fontFamily: "var(--font-secondary)",
+                      fontSize: "var(--fontsize-small)",
+                      color: "var(--color-text-reverse)",
+                      background: "var(--color-ascent)",
+                      WebkitTextFillColor: "initial",
+                      top: "0",
+                      left: "unset",
+                      transform: "unset",
+                    }}
+                  >
+                    {lang("contactsSection.popup")}
+                  </Popup>
                 </span>
                 <span className={`${styles.contactValue}`}>{phoneNumber}</span>
               </div>
@@ -226,9 +246,26 @@ const Page = () => {
               <div className={`${styles.specContainer}`}>
                 <span className={`${styles.contactTitle}`}>
                   {lang("contactsSection.btn.1.content")}
-                  {emailAddressCopied && (
-                    <span>{lang("contactsSection.popup")}</span>
-                  )}
+                  <Popup
+                    state={emailAddressCopied}
+                    stylesForPopup={{
+                      position: "absolute",
+                      right: "10px",
+                      zIndex: 20,
+                      padding: "5px 15px",
+                      borderRadius: "20px",
+                      fontFamily: "var(--font-secondary)",
+                      fontSize: "var(--fontsize-small)",
+                      color: "var(--color-text-reverse)",
+                      background: "var(--color-ascent)",
+                      WebkitTextFillColor: "initial",
+                      top: "0",
+                      left: "unset",
+                      transform: "unset",
+                    }}
+                  >
+                    {lang("contactsSection.popup")}
+                  </Popup>
                 </span>
                 <span className={`${styles.contactValue}`}>{emailAddress}</span>
               </div>
@@ -257,7 +294,26 @@ const Page = () => {
               <div className={`${styles.specContainer}`}>
                 <span className={`${styles.contactTitle}`}>
                   {lang("contactsSection.btn.3.content")}
-                  {icoCopied && <span>{lang("contactsSection.popup")}</span>}
+                  <Popup
+                    state={icoCopied}
+                    stylesForPopup={{
+                      position: "absolute",
+                      right: "10px",
+                      zIndex: 20,
+                      padding: "5px 15px",
+                      borderRadius: "20px",
+                      fontFamily: "var(--font-secondary)",
+                      fontSize: "var(--fontsize-small)",
+                      color: "var(--color-text-reverse)",
+                      background: "var(--color-ascent)",
+                      WebkitTextFillColor: "initial",
+                      top: "0",
+                      left: "unset",
+                      transform: "unset",
+                    }}
+                  >
+                    {lang("contactsSection.popup")}
+                  </Popup>
                 </span>
                 <span className={`${styles.contactValue}`}>
                   {ico}

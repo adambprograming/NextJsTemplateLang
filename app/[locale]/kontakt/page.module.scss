@@ -96,20 +96,7 @@
               text-align: left;
               font-family: var(--font-primary);
               font-size: var(--fontsize-h6);
-              span {
-                position: absolute;
-                right: 10px;
-                z-index: 20;
-                padding: 5px 15px;
-                border-radius: 20px;
-                font-family: var(--font-secondary);
-                font-size: var(--fontsize-small);
-                color: var(--color-text-reverse);
-                background: var(--color-ascent);
-                -webkit-text-fill-color: initial;
-              }
             }
-
             .contactValue {
               position: relative;
               padding-left: calc(
