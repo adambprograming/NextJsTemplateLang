@@ -1,7 +1,7 @@
 "use client";
 // Styles
 import styles from "./menu.module.scss";
-import stylesHeader from "../../containers/header/header.module.scss"
+import stylesHeader from "../../containers/header/header.module.scss";
 // Public & Assets
 
 // React/Next Functions
