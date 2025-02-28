@@ -6,20 +6,30 @@ import styles from "./carousel.module.scss";
 // React/Next Functions
 import { cloneElement } from "react";
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 // Context & Actions
 
 // Components
 
 /*
 INSTRUCTIONS
-infinite              three options 
-                        1: notInfinite for swiping just right to last item and there is no right arrow
-                        2: pseudoInfinite for swiping to last element and at last element right arrow do swipe back to first element
-                        3: infinite for endless swiping
-fullWidth             if true, one item take full potential width, else take 86% and 7% on each side take previous and next item
-backdropFilterArrows  backdropfilter of arrows
-animation             animation of carousel, options:
-                        "cube": 
+  infinite                      three options 
+                                  0: notInfinite for swiping just right to last item and there is no right arrow
+                                  1: pseudoInfinite for swiping to last element and at last element right arrow do swipe back to first element
+                                  2: infinite for endless swiping
+  fullWidth                     if true, one item take full potential width, else take 86% and 7% on each side take previous and next item
+  backdropFilterArrows          backdropfilter of arrows
+  animation                     animation of carousel, options:
+                                  "cube":
+  arrowsStyle                   options
+                                  0: default
+                                  1: hugeInCircle
+                                  2: imgSource (use rightArrowSrc and leftArrowSrc)
+  rightArrowSrc                 imgSource for right arrow
+  leftArrowSrc                  imgSource for left arrow
+  stylesForCarousel             styles for carousel
+  stylesForCarouselItem         styles for carousel item
+  stylesForArrows               styles for arrows
 */
 export const Carousel = ({
   children,
@@ -27,6 +37,12 @@ export const Carousel = ({
   fullWidth = true,
   backdropFilterArrows = "blur(4px)",
   animation = "none",
+  arrowsStyle = 0,
+  rightArrowSrc = null,
+  leftArrowSrc = null,
+  stylesForCarousel = {},
+  stylesForCarouselItem = {},
+  stylesForArrows = {},
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -73,6 +89,8 @@ export const Carousel = ({
   }, [isTransitioning, currentIndex, length, infinite]);
 
   const next = () => {
+    console.log(isTransitioning);
+
     if (!isTransitioning) {
       if (infinite === "infinite" || currentIndex < length - 1) {
         setIsTransitioning(true);
@@ -190,7 +208,15 @@ export const Carousel = ({
 
   return (
     <div
-      className={`${styles.carousel} ${styles[animation]}`}
+      className={`${styles.carousel} ${styles[animation]} ${
+        arrowsStyle === 0
+          ? ""
+          : arrowsStyle === 1
+          ? styles.hugeInCircle
+          : arrowsStyle === 2
+          ? styles.imgSource
+          : ""
+      }`}
       // onMouseDown={handleMouseDown}
       // onMouseMove={handleMouseMove}
       // onMouseUp={handleMouseUp}
@@ -203,13 +229,22 @@ export const Carousel = ({
       ref={carouselRef}
       style={{
         "--localBackdropFilterArrows": `${backdropFilterArrows}`,
+        ...stylesForCarousel,
       }}
     >
       {(infinite === "infinite" ||
         infinite === "pseudoInfinite" ||
         currentIndex > 0) && (
-        <button onClick={prev} className={`${styles.navBtn} ${styles.leftBtn}`}>
-          {"<"}
+        <button
+          onClick={prev}
+          className={`${styles.navBtn} ${styles.leftBtn}`}
+          style={{ ...stylesForArrows }}
+        >
+          {leftArrowSrc ? (
+            <Image src={leftArrowSrc} alt="<" />
+          ) : (
+            <span>{"<"}</span>
+          )}
         </button>
       )}
       <div
@@ -227,6 +262,7 @@ export const Carousel = ({
           cloneElement(child, {
             key: index,
             active: getRelativePosition(index),
+            stylesForCarouselItem: stylesForCarouselItem,
           })
         )}
       </div>
@@ -236,19 +272,29 @@ export const Carousel = ({
         <button
           onClick={next}
           className={`${styles.navBtn} ${styles.rightBtn}`}
+          style={{ ...stylesForArrows }}
         >
-          {">"}
+          {rightArrowSrc ? (
+            <Image src={rightArrowSrc} alt=">" />
+          ) : (
+            <span>{">"}</span>
+          )}
         </button>
       )}
     </div>
   );
 };
 
-export const CarouselItem = ({ children, active, height }) => {
+export const CarouselItem = ({
+  children,
+  active,
+  height,
+  stylesForCarouselItem,
+}) => {
   return (
     <div
       className={`${styles.carouselItem} ${styles[active]}`}
-      style={{ height: `${height}` }}
+      style={{ height: `${height}`, ...stylesForCarouselItem }}
     >
       {children}
     </div>

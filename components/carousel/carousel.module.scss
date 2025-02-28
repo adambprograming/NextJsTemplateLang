@@ -3,10 +3,6 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  // cursor: grab;
-  // &:active{
-  //     cursor: grabbing;
-  // }
   .navBtn {
     font-size: large;
     position: absolute;
@@ -36,6 +32,10 @@
       right: 0px;
       // background: linear-gradient(270deg, var(--color-background) 0%, transparent 25%);
     }
+    img {
+      height: auto;
+      width: 100%;
+    }
   }
   .carouselInner {
     display: flex;
@@ -49,7 +49,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: transparent; // Example background color
+      background-color: transparent;
       img {
         width: 100%;
         height: auto;
@@ -57,25 +57,51 @@
       }
     }
   }
-  // &.cube .carouselInner .carouselItem {
-  // position: absolute;
-  // transition: transform 0.5s, opacity 0.5s;
-  // &.leftToActive {
-  //   transform: translateY(-10px) scaleX(0) skewY(10deg) !important;
-  //   opacity: 0.5;
-  // }
-  // &.active {
-  //   position: relative;
-  //   transform: translateY(0px) scaleX(1) !important;
-  //   opacity: 1;
-  // }
-  // &.rightToActive {
-  //   transform: translateY(-10px) scaleX(0) skewY(-10deg) !important;
-  //   opacity: 0.5;
-  // }
-  // &.other{
-  //   transform: translateY(0px) scaleX(0) !important;
-  //   opacity: 0.5;
-  // }
-  // }
+  &.hugeInCircle {
+    .navBtn {
+      font-size: large;
+      position: absolute;
+      z-index: 1;
+      background-color: transparent;
+      height: 100%;
+      border: none;
+      cursor: pointer;
+      width: clamp(35px, 8vw, 100px);
+      & > span {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-size: clamp(20px, 4vw, 40px);
+        color: var(--color-text-reverse);
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          border: 2px var(--color-background) solid;
+          border-radius: 500px;
+          height: auto;
+          aspect-ratio: 1 / 1;
+          width: clamp(30px, 6vw, 60px);
+          display: flex;
+        }
+      }
+      &.leftBtn span::before {
+        top: 50%;
+        left: 51%;
+        transform: translate(-49%, -50%);
+      }
+      &.rightBtn span::before {
+        top: 50%;
+        left: 49%;
+        transform: translate(-51%, -50%);
+      }
+    }
+  }
+  &.imgSource {
+    .navBtn {
+      width: clamp(40px, 7%, 100px);
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
 }
