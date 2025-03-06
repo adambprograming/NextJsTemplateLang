@@ -85,7 +85,7 @@ export const Menu = ({
       const currentScrollY = window.scrollY; // Get the current scroll position
       if (currentScrollY >= prevScrollY) {
         // Scrolling down
-        closeMenuFunction()
+        closeMenuFunction();
       }
       prevScrollY = currentScrollY; // Update last known scroll position
     };
@@ -93,7 +93,7 @@ export const Menu = ({
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [headerOption, menuOption]);
 
   /*
@@ -371,10 +371,15 @@ export const Menu = ({
             });
           })}
           {/* {!canBeInline && [1, 2].includes(menuOption) && (
-            <div>
-                DALSI VECI
-            </div>
-          )} */}
+          <div className={`${styles.socials}`}>
+            <Link href={"https://www.instagram.com/"} target="_blank">
+              <IconInstagram />
+            </Link>
+            <Link href={"https://www.instagram.com/"} target="_blank">
+              <IconTiktok />
+            </Link>
+          </div>
+        )} */}
         </ul>
       </div>
     </nav>
