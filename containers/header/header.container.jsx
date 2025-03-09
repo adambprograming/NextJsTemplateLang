@@ -41,11 +41,18 @@ const Header = ({
   const lastScrollY = useRef(0);
 
   useEffect(() => {
-    if ([1, 2].includes(headerOption)) {
-      const heightOfHeader = headerRef.current.offsetHeight;
-      document.body.style.paddingTop = `${heightOfHeader}px`;
+    function setPaddingTopOfBody() {
+      if ([1, 2].includes(headerOption)) {
+        const heightOfHeader = headerRef.current.offsetHeight;
+        document.body.style.paddingTop = `${heightOfHeader}px`;
+      }
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    setPaddingTopOfBody();
+    window.addEventListener("resize", setPaddingTopOfBody);
+    return () => {
+      window.removeEventListener("resize", setPaddingTopOfBody);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -121,16 +128,16 @@ const Header = ({
         id={`${styles.articleHeader}`}
         ref={headerRef}
         className={`${styles[variant]} ${
-          styles[headerOption === 0
-            ? ""
-            : headerOption === 1
-            ? "fixedOnScrollUp"
-            : headerOption === 2
-            ? "fixedAllTime"
-            : ""]
-        } ${
-          styles[headerOption === 1 && isVisible ? "visible" : "hidden"]
-        }`}
+          styles[
+            headerOption === 0
+              ? ""
+              : headerOption === 1
+              ? "fixedOnScrollUp"
+              : headerOption === 2
+              ? "fixedAllTime"
+              : ""
+          ]
+        } ${styles[headerOption === 1 && isVisible ? "visible" : "hidden"]}`}
         style={{
           backgroundColor: `${bgColor}`,
           "--localBackdropFilter": `${backdropFilter}`,
@@ -150,16 +157,16 @@ const Header = ({
         id={`${styles.articleHeader}`}
         ref={headerRef}
         className={`${styles[variant]} ${
-          styles[headerOption === 0
-            ? ""
-            : headerOption === 1
-            ? "fixedOnScrollUp"
-            : headerOption === 2
-            ? "fixedAllTime"
-            : ""]
-        } ${
-          styles[headerOption === 1 && isVisible ? "visible" : "hidden"]
-        }`}
+          styles[
+            headerOption === 0
+              ? ""
+              : headerOption === 1
+              ? "fixedOnScrollUp"
+              : headerOption === 2
+              ? "fixedAllTime"
+              : ""
+          ]
+        } ${styles[headerOption === 1 && isVisible ? "visible" : "hidden"]}`}
         style={{
           backgroundColor: `${bgColor}`,
           "--localBackdropFilter": `${backdropFilter}`,
@@ -179,16 +186,16 @@ const Header = ({
         id={`${styles.articleHeader}`}
         ref={headerRef}
         className={`${styles[variant]} ${
-          styles[headerOption === 0
-            ? ""
-            : headerOption === 1
-            ? "fixedOnScrollUp"
-            : headerOption === 2
-            ? "fixedAllTime"
-            : ""]
-        } ${
-          styles[headerOption === 1 && isVisible ? "visible" : "hidden"]
-        }`}
+          styles[
+            headerOption === 0
+              ? ""
+              : headerOption === 1
+              ? "fixedOnScrollUp"
+              : headerOption === 2
+              ? "fixedAllTime"
+              : ""
+          ]
+        } ${styles[headerOption === 1 && isVisible ? "visible" : "hidden"]}`}
         style={{
           backgroundColor: `${bgColor}`,
           "--localBackdropFilter": `${backdropFilter}`,
@@ -208,13 +215,15 @@ const Header = ({
         id={`${styles.articleHeader}`}
         ref={headerRef}
         className={`${styles[variant]} ${
-         styles[ headerOption === 0
-            ? ""
-            : headerOption === 1
-            ? `fixedOnScrollUp ${isVisible ? "visible" : "hidden"}`
-            : headerOption === 2
-            ? "fixedAllTime"
-            : ""]
+          styles[
+            headerOption === 0
+              ? ""
+              : headerOption === 1
+              ? `fixedOnScrollUp ${isVisible ? "visible" : "hidden"}`
+              : headerOption === 2
+              ? "fixedAllTime"
+              : ""
+          ]
         }`}
         style={{
           backgroundColor: `${bgColor}`,
